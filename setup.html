@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+    width:100% !important; 
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,7 +14,7 @@ $(document).ready(function(){
     //  alert(JSON.stringify(data, null, 2));
     //});
     if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
-      var ret = confirm("It looks like you're using Internet Explorer💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
+        var ret = confirm("It looks like you're using Internet Explorer💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
         if (ret == true) {
             window.location.href = 'fontanili.pdf';
         } else {
@@ -22,7 +23,12 @@ $(document).ready(function(){
     }
     
     if (typeof window.orientation !== 'undefined') {
-        alert('mobile');
+        var ret = confirm("It looks like you're using a mobile device💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
+        if (ret == true) {
+            window.location.href = 'fontanili.pdf';
+        } else {
+            alert("Sorry, your experience won't be flawless");
+        }
     }
 });
 </script>
