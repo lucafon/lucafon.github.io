@@ -11781,7 +11781,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[235]:</div>
+<div class="prompt input_prompt">In&nbsp;[240]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11818,6 +11818,7 @@ div#notebook {
     display: flex;
     align-items: center;
     text-align: center;
+    width:100% !important; 
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11827,7 +11828,7 @@ $(document).ready(function(){
     //  alert(JSON.stringify(data, null, 2));
     //});
     if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
-      var ret = confirm("It looks like you're using Internet Explorer💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
+        var ret = confirm("It looks like you're using Internet Explorer💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
         if (ret == true) {
             window.location.href = 'fontanili.pdf';
         } else {
@@ -11836,7 +11837,12 @@ $(document).ready(function(){
     }
     
     if (typeof window.orientation !== 'undefined') {
-        alert('mobile');
+        var ret = confirm("It looks like you're using a mobile device💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
+        if (ret == true) {
+            window.location.href = 'fontanili.pdf';
+        } else {
+            alert("Sorry, your experience won't be flawless");
+        }
     }
 });
 </script>
@@ -12125,10 +12131,10 @@ $(document).ready(function(){
 
 
 
-<div id="f5bc1e86-4056-4c39-a83e-2b0c8df90fe3"></div>
+<div id="c24ea8a7-e27a-4b14-a5c1-f481ff510050"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f5bc1e86-4056-4c39-a83e-2b0c8df90fe3');
+var element = $('#c24ea8a7-e27a-4b14-a5c1-f481ff510050');
 
 (function(root) {
   function now() {
@@ -12429,10 +12435,10 @@ var element = $('#f5bc1e86-4056-4c39-a83e-2b0c8df90fe3');
 
 
 
-<div id="8c3e82cb-263c-4e53-89b9-6406e8d69ce1"></div>
+<div id="561ba8c7-2862-463c-9d7f-ca65d8be8156"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8c3e82cb-263c-4e53-89b9-6406e8d69ce1');
+var element = $('#561ba8c7-2862-463c-9d7f-ca65d8be8156');
 (function(root) {
   function embed_document(root) {
     
@@ -12518,10 +12524,10 @@ var element = $('#8c3e82cb-263c-4e53-89b9-6406e8d69ce1');
 
 
 
-<div id="af500b27-d659-4be3-9979-b88e66c1cef6"></div>
+<div id="9cf89f4b-ff38-47e3-b9f5-80d9256f2920"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#af500b27-d659-4be3-9979-b88e66c1cef6');
+var element = $('#9cf89f4b-ff38-47e3-b9f5-80d9256f2920');
 
 (function(root) {
   function now() {
@@ -12822,10 +12828,10 @@ var element = $('#af500b27-d659-4be3-9979-b88e66c1cef6');
 
 
 
-<div id="73ab6721-19f5-44ab-867b-46d3a7f58f0a"></div>
+<div id="3739e56d-93dc-4886-accf-9e0c1daf746b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#73ab6721-19f5-44ab-867b-46d3a7f58f0a');
+var element = $('#3739e56d-93dc-4886-accf-9e0c1daf746b');
 (function(root) {
   function embed_document(root) {
     
@@ -13032,10 +13038,10 @@ var element = $('#73ab6721-19f5-44ab-867b-46d3a7f58f0a');
 
 
 
-<div id="b0d271c4-1957-41ee-b998-4bcaf93d210a"></div>
+<div id="ada19814-708d-4fd3-be9c-2be5ef8bd71a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b0d271c4-1957-41ee-b998-4bcaf93d210a');
+var element = $('#ada19814-708d-4fd3-be9c-2be5ef8bd71a');
 
 (function(root) {
   function now() {
@@ -13336,10 +13342,10 @@ var element = $('#b0d271c4-1957-41ee-b998-4bcaf93d210a');
 
 
 
-<div id="20be0550-a094-4acc-bdeb-e3a08c7d38f0"></div>
+<div id="a77d44d5-6d00-49fc-b866-0afec1b78989"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#20be0550-a094-4acc-bdeb-e3a08c7d38f0');
+var element = $('#a77d44d5-6d00-49fc-b866-0afec1b78989');
 (function(root) {
   function embed_document(root) {
     
@@ -13423,10 +13429,10 @@ var element = $('#20be0550-a094-4acc-bdeb-e3a08c7d38f0');
 
 
 
-<div id="0c526754-2dbc-433a-849d-886ae01c9db6"></div>
+<div id="52d9e724-f1a7-4794-8959-7d7c4421651e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0c526754-2dbc-433a-849d-886ae01c9db6');
+var element = $('#52d9e724-f1a7-4794-8959-7d7c4421651e');
 
 (function(root) {
   function now() {
@@ -13727,10 +13733,10 @@ var element = $('#0c526754-2dbc-433a-849d-886ae01c9db6');
 
 
 
-<div id="6e673564-da7b-4e0c-b575-afd96f4ac408"></div>
+<div id="7a9e55af-c7cf-4e88-a97f-931698ccbeec"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6e673564-da7b-4e0c-b575-afd96f4ac408');
+var element = $('#7a9e55af-c7cf-4e88-a97f-931698ccbeec');
 (function(root) {
   function embed_document(root) {
     
@@ -14002,10 +14008,10 @@ Tokyo, November 2013</p>
 
 
 
-<div id="c2471a2f-8aac-4ef7-a791-27696a1e87f6"></div>
+<div id="a5b279b5-d312-40f0-8d1b-25c603ed1388"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c2471a2f-8aac-4ef7-a791-27696a1e87f6');
+var element = $('#a5b279b5-d312-40f0-8d1b-25c603ed1388');
 
 (function(root) {
   function now() {
@@ -14306,10 +14312,10 @@ var element = $('#c2471a2f-8aac-4ef7-a791-27696a1e87f6');
 
 
 
-<div id="ec28d227-d226-4f30-bbce-ff2d10d99625"></div>
+<div id="066c7a26-a59f-4e7b-8c17-1effc169b8ab"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ec28d227-d226-4f30-bbce-ff2d10d99625');
+var element = $('#066c7a26-a59f-4e7b-8c17-1effc169b8ab');
 (function(root) {
   function embed_document(root) {
     
