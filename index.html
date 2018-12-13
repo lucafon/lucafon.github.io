@@ -11781,7 +11781,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[190]:</div>
+<div class="prompt input_prompt">In&nbsp;[234]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11826,30 +11826,13 @@ $(document).ready(function(){
     //$.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
     //  alert(JSON.stringify(data, null, 2));
     //});
-    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 )
-    {
-        alert('Opera');
-    }
-    else if(navigator.userAgent.indexOf("Chrome") != -1 )
-    {
-        var ret = confirm("It looks like you're using Chrome💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
+    if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
+      var ret = confirm("It looks like you're using Internet Explorer💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
         if (ret == true) {
             window.location.href = 'fontanili.pdf';
         } else {
             alert("Sorry, your experience won't be flawless");
         }
-    }
-    else if(navigator.userAgent.indexOf("Safari") != -1)
-    {
-        alert('Safari');
-    }
-    else if(navigator.userAgent.indexOf("Firefox") != -1 )
-    {
-         alert('Firefox');
-    }
-    else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
-    {
-      alert('IE');
     }
 });
 </script>
@@ -12038,7 +12021,7 @@ $(document).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[186]:</div>
+<div class="prompt input_prompt">In&nbsp;[192]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_working_experience</span><span class="p">(</span><span class="n">employee</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">):</span>
@@ -12071,8 +12054,8 @@ $(document).ready(function(){
     <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="n">TOOLTIPS</span><span class="p">,</span> <span class="n">toolbar_location</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">y_range</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span>
     <span class="n">p</span><span class="o">.</span><span class="n">y_range</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="mf">1.1</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.3</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="mf">2.4</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="mf">2.6</span>
 
     <span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#480968&quot;</span><span class="p">)</span>
 
@@ -12100,10 +12083,10 @@ $(document).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[188]:</div>
+<div class="prompt input_prompt">In&nbsp;[233]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_working_experience</span><span class="p">(</span><span class="s1">&#39;Ubiq&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_working_experience</span><span class="p">(</span><span class="s1">&#39;Ubiq&#39;</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12124,7 +12107,7 @@ $(document).ready(function(){
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="46117">Loading BokehJS ...</span>
+        <span id="91498">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -12138,10 +12121,10 @@ $(document).ready(function(){
 
 
 
-<div id="6f891e4d-122c-48ce-9fd7-d50dbb4ef996"></div>
+<div id="7236495e-b569-467a-a92e-7029a22114ea"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6f891e4d-122c-48ce-9fd7-d50dbb4ef996');
+var element = $('#7236495e-b569-467a-a92e-7029a22114ea');
 
 (function(root) {
   function now() {
@@ -12301,7 +12284,7 @@ var element = $('#6f891e4d-122c-48ce-9fd7-d50dbb4ef996');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("46117");
+    var el = document.getElementById("91498");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -12355,9 +12338,9 @@ var element = $('#6f891e4d-122c-48ce-9fd7-d50dbb4ef996');
       console.log("Bokeh: injecting script tag for BokehJS library: ", url);
       document.getElementsByTagName("head")[0].appendChild(s);
     }
-  };var element = document.getElementById("46117");
+  };var element = document.getElementById("91498");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid '46117' but no matching script tag was found. ")
+    console.log("Bokeh: ERROR: autoload.js configured with elementid '91498' but no matching script tag was found. ")
     return false;
   }
 
@@ -12394,7 +12377,7 @@ var element = $('#6f891e4d-122c-48ce-9fd7-d50dbb4ef996');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("46117")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("91498")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -12428,7 +12411,7 @@ var element = $('#6f891e4d-122c-48ce-9fd7-d50dbb4ef996');
 
 
 
-  <div class="bk-root" id="3969605e-595b-43b3-bcac-2dd73954f878"></div>
+  <div class="bk-root" id="98112e8e-37b1-4cfd-93ed-2cb5e821159a"></div>
 
 </div>
 
@@ -12442,15 +12425,15 @@ var element = $('#6f891e4d-122c-48ce-9fd7-d50dbb4ef996');
 
 
 
-<div id="5aa0fba6-9d68-45b7-9963-728e7f98cadc"></div>
+<div id="82ccd4eb-459d-4797-8729-ef03c7926ae1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5aa0fba6-9d68-45b7-9963-728e7f98cadc');
+var element = $('#82ccd4eb-459d-4797-8729-ef03c7926ae1');
 (function(root) {
   function embed_document(root) {
     
-  var docs_json = {"675bd5f1-5392-4a8a-9820-83d9df1e0013":{"roots":{"references":[{"attributes":{"below":[{"id":"46128","type":"LinearAxis"}],"left":[{"id":"46133","type":"LinearAxis"}],"plot_height":500,"plot_width":500,"renderers":[{"id":"46128","type":"LinearAxis"},{"id":"46132","type":"Grid"},{"id":"46133","type":"LinearAxis"},{"id":"46137","type":"Grid"},{"id":"46147","type":"BoxAnnotation"},{"id":"46158","type":"GlyphRenderer"},{"id":"46160","type":"LabelSet"}],"title":{"id":"46951","type":"Title"},"toolbar":{"id":"46145","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"46120","type":"DataRange1d"},"x_scale":{"id":"46124","type":"LinearScale"},"y_range":{"id":"46122","type":"DataRange1d"},"y_scale":{"id":"46126","type":"LinearScale"}},"id":"46119","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"46957","type":"UnionRenderers"},{"attributes":{"plot":null,"text":""},"id":"46951","type":"Title"},{"attributes":{},"id":"46952","type":"BasicTickFormatter"},{"attributes":{"overlay":{"id":"46147","type":"BoxAnnotation"}},"id":"46140","type":"BoxZoomTool"},{"attributes":{"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46129","type":"BasicTicker"}},"id":"46132","type":"Grid"},{"attributes":{},"id":"46126","type":"LinearScale"},{"attributes":{"callback":null,"end":2.4,"start":-0.3},"id":"46120","type":"DataRange1d"},{"attributes":{"formatter":{"id":"46952","type":"BasicTickFormatter"},"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46134","type":"BasicTicker"}},"id":"46133","type":"LinearAxis"},{"attributes":{"fill_color":{"value":"#480968"},"line_color":{"value":"#480968"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"46156","type":"Circle"},{"attributes":{"formatter":{"id":"46954","type":"BasicTickFormatter"},"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46129","type":"BasicTicker"}},"id":"46128","type":"LinearAxis"},{"attributes":{},"id":"46134","type":"BasicTicker"},{"attributes":{},"id":"46138","type":"PanTool"},{"attributes":{},"id":"46129","type":"BasicTicker"},{"attributes":{"callback":null,"data":{"descriptions":["Coordinator of the Back-End development team (5+ developers)","Development of Back-End system of different mobile applications in association with Poste Italiane (Extra Sconti, 100K+ active users per month), CartaSi (CashLessCity), Nivea (ConTATTO NIVEA), Barilla (Mio Mulino) and Samsung","Business Logic Manager of the project iCoop, in collaboration with Coop Italia. Manager of the Back-End development of the new couponing system within the iCoop mobile app","Development of the Back-End system and REST Web Services of Ti Frutta, an iOS and Android mobile app, using Data Mining and Machine Learning techniques on Cloud platform. Development of advanced and optimized algorithms to detect products on images of receipts using NoSQL databases (Solr, HBase) and OCR algorithms to read text from pictures using advanced image pre-processing techniques","Study and development of a predictive model that finds similarities between texts of different images using Text Mining and ML techniques","Development of a server-side binarization algorithm of raw receipt images using different image processing approaches (edge-detection, features extraction, thresholding) using OpenCV in Python","Development of a reliable tool to import data from RDBMS to Hadoop ecosystem using Sqoop, Spark, Hive and Impala","Development of a data replication flow between different Solr instances using Flume and Python","4+ years\u2019 experience on Java 8, lambdas and Design Patterns","Hands-on experience with Front-End solutions development using Extjs and HTML. Knowledge of web development tools such as Firebug","Experience with JMS and Apache ActiveMQ message broker","Development of software solutions following agile practices (Kanban) and using versioning control systems such as SVN and Git","Experience with TDD development using Junit framework for unit testing both in Java and Python","Hands-on experience with WordPress plug-ins development using JavaScript and PHP","Hands-on experience with different Hadoop clusters (Cloudera and Ambari)"],"keywords":["Software Development Leader","Back-End","Business Logic Manager","R&D Big Data","R&D Machine Learning","R&D Computer Vision","R&D Big Data","R&D Big Data","Java","Front-End","JMS","Agile","TDD","WordPress","Hadoop"],"x":{"__ndarray__":"fsmOfp2T4T9eeT4zqavrP97zdV07qvk/MDid3KSU8D/j/enivGLwP/qpHi+HAe8/zwhiwHrd+D++Z3YKlMv6Pxz6vwC1LO0/AO+kThB12j8GyAqBgJ/nP/DncfJ/n7c/JI3IjtrT3z8sJI3zlmLXP0Rln6KcPdg/","dtype":"float64","shape":[15]},"y":{"__ndarray__":"SCsqzdlQyD9OE6R11FXXP1xv2acaQeo/qOEG/V6cwD+mshy9ylfvP6B4/c4G2tA/SLciekIQ2z+pwnIKc7vkP8u3f9VmPeg/jP+7n8F32z+BvnFTXGTrP0GvWRvL7+g/2HLxxdEg6z8Aw+0NfDWnP6ckiqPim+Y/","dtype":"float64","shape":[15]}},"selected":{"id":"46958","type":"Selection"},"selection_policy":{"id":"46957","type":"UnionRenderers"}},"id":"46118","type":"ColumnDataSource"},{"attributes":{"data_source":{"id":"46118","type":"ColumnDataSource"},"glyph":{"id":"46156","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"46157","type":"Circle"},"selection_glyph":null,"view":{"id":"46159","type":"CDSView"}},"id":"46158","type":"GlyphRenderer"},{"attributes":{},"id":"46141","type":"SaveTool"},{"attributes":{},"id":"46142","type":"ResetTool"},{"attributes":{},"id":"46139","type":"WheelZoomTool"},{"attributes":{"source":{"id":"46118","type":"ColumnDataSource"}},"id":"46159","type":"CDSView"},{"attributes":{"dimension":1,"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46134","type":"BasicTicker"}},"id":"46137","type":"Grid"},{"attributes":{"callback":null,"end":1.1,"start":-0.1},"id":"46122","type":"DataRange1d"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"46147","type":"BoxAnnotation"},{"attributes":{"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"source":{"id":"46118","type":"ColumnDataSource"},"text":{"field":"keywords"},"text_align":"center","text_color":{"value":"#555555"},"text_font_size":{"value":"10pt"},"x":{"field":"x"},"y":{"field":"y"},"y_offset":{"value":-30}},"id":"46160","type":"LabelSet"},{"attributes":{},"id":"46954","type":"BasicTickFormatter"},{"attributes":{"callback":null,"tooltips":"\n        <div style=\"width:300px\">\n            <span style=\"font-size: 17px;\"><b>@keywords</b></span>\n            <span style=\"font-size: 15px;\">@descriptions</span>\n        </div>\n    "},"id":"46144","type":"HoverTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"46138","type":"PanTool"},{"id":"46139","type":"WheelZoomTool"},{"id":"46140","type":"BoxZoomTool"},{"id":"46141","type":"SaveTool"},{"id":"46142","type":"ResetTool"},{"id":"46143","type":"HelpTool"},{"id":"46144","type":"HoverTool"}]},"id":"46145","type":"Toolbar"},{"attributes":{},"id":"46143","type":"HelpTool"},{"attributes":{},"id":"46958","type":"Selection"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"46157","type":"Circle"},{"attributes":{},"id":"46124","type":"LinearScale"}],"root_ids":["46119"]},"title":"Bokeh Application","version":"1.0.2"}};
-  var render_items = [{"docid":"675bd5f1-5392-4a8a-9820-83d9df1e0013","roots":{"46119":"3969605e-595b-43b3-bcac-2dd73954f878"}}];
+  var docs_json = {"4901d196-e572-4185-85de-a15836c921e2":{"roots":{"references":[{"attributes":{"below":[{"id":"91509","type":"LinearAxis"}],"left":[{"id":"91514","type":"LinearAxis"}],"renderers":[{"id":"91509","type":"LinearAxis"},{"id":"91513","type":"Grid"},{"id":"91514","type":"LinearAxis"},{"id":"91518","type":"Grid"},{"id":"91528","type":"BoxAnnotation"},{"id":"91539","type":"GlyphRenderer"},{"id":"91541","type":"LabelSet"}],"title":{"id":"92710","type":"Title"},"toolbar":{"id":"91526","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"91501","type":"DataRange1d"},"x_scale":{"id":"91505","type":"LinearScale"},"y_range":{"id":"91503","type":"DataRange1d"},"y_scale":{"id":"91507","type":"LinearScale"}},"id":"91500","subtype":"Figure","type":"Plot"},{"attributes":{"formatter":{"id":"92711","type":"BasicTickFormatter"},"plot":{"id":"91500","subtype":"Figure","type":"Plot"},"ticker":{"id":"91515","type":"BasicTicker"}},"id":"91514","type":"LinearAxis"},{"attributes":{},"id":"91523","type":"ResetTool"},{"attributes":{},"id":"91510","type":"BasicTicker"},{"attributes":{},"id":"91515","type":"BasicTicker"},{"attributes":{},"id":"91524","type":"HelpTool"},{"attributes":{},"id":"92717","type":"Selection"},{"attributes":{"callback":null,"tooltips":"\n        <div style=\"width:300px\">\n            <span style=\"font-size: 17px;\"><b>@keywords</b></span>\n            <span style=\"font-size: 15px;\">@descriptions</span>\n        </div>\n    "},"id":"91525","type":"HoverTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"91519","type":"PanTool"},{"id":"91520","type":"WheelZoomTool"},{"id":"91521","type":"BoxZoomTool"},{"id":"91522","type":"SaveTool"},{"id":"91523","type":"ResetTool"},{"id":"91524","type":"HelpTool"},{"id":"91525","type":"HoverTool"}]},"id":"91526","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"91528","type":"BoxAnnotation"},{"attributes":{"plot":{"id":"91500","subtype":"Figure","type":"Plot"},"ticker":{"id":"91510","type":"BasicTicker"}},"id":"91513","type":"Grid"},{"attributes":{"data_source":{"id":"91499","type":"ColumnDataSource"},"glyph":{"id":"91537","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"91538","type":"Circle"},"selection_glyph":null,"view":{"id":"91540","type":"CDSView"}},"id":"91539","type":"GlyphRenderer"},{"attributes":{"callback":null,"end":1.1,"start":-0.1},"id":"91503","type":"DataRange1d"},{"attributes":{"callback":null,"end":2.6,"start":-0.5},"id":"91501","type":"DataRange1d"},{"attributes":{"source":{"id":"91499","type":"ColumnDataSource"}},"id":"91540","type":"CDSView"},{"attributes":{},"id":"91507","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"91538","type":"Circle"},{"attributes":{"plot":{"id":"91500","subtype":"Figure","type":"Plot"},"source":{"id":"91499","type":"ColumnDataSource"},"text":{"field":"keywords"},"text_align":"center","text_color":{"value":"#555555"},"text_font_size":{"value":"10pt"},"x":{"field":"x"},"y":{"field":"y"},"y_offset":{"value":-30}},"id":"91541","type":"LabelSet"},{"attributes":{"formatter":{"id":"92713","type":"BasicTickFormatter"},"plot":{"id":"91500","subtype":"Figure","type":"Plot"},"ticker":{"id":"91510","type":"BasicTicker"}},"id":"91509","type":"LinearAxis"},{"attributes":{"overlay":{"id":"91528","type":"BoxAnnotation"}},"id":"91521","type":"BoxZoomTool"},{"attributes":{},"id":"92711","type":"BasicTickFormatter"},{"attributes":{},"id":"91505","type":"LinearScale"},{"attributes":{"plot":null,"text":""},"id":"92710","type":"Title"},{"attributes":{},"id":"92713","type":"BasicTickFormatter"},{"attributes":{"dimension":1,"plot":{"id":"91500","subtype":"Figure","type":"Plot"},"ticker":{"id":"91515","type":"BasicTicker"}},"id":"91518","type":"Grid"},{"attributes":{},"id":"92716","type":"UnionRenderers"},{"attributes":{},"id":"91519","type":"PanTool"},{"attributes":{},"id":"91520","type":"WheelZoomTool"},{"attributes":{},"id":"91522","type":"SaveTool"},{"attributes":{"callback":null,"data":{"descriptions":["Coordinator of the Back-End development team (5+ developers)","Development of Back-End system of different mobile applications in association with Poste Italiane (Extra Sconti, 100K+ active users per month), CartaSi (CashLessCity), Nivea (ConTATTO NIVEA), Barilla (Mio Mulino) and Samsung","Business Logic Manager of the project iCoop, in collaboration with Coop Italia. Manager of the Back-End development of the new couponing system within the iCoop mobile app","Development of the Back-End system and REST Web Services of Ti Frutta, an iOS and Android mobile app, using Data Mining and Machine Learning techniques on Cloud platform. Development of advanced and optimized algorithms to detect products on images of receipts using NoSQL databases (Solr, HBase) and OCR algorithms to read text from pictures using advanced image pre-processing techniques","Study and development of a predictive model that finds similarities between texts of different images using Text Mining and ML techniques","Development of a server-side binarization algorithm of raw receipt images using different image processing approaches (edge-detection, features extraction, thresholding) using OpenCV in Python","Development of a reliable tool to import data from RDBMS to Hadoop ecosystem using Sqoop, Spark, Hive and Impala","Development of a data replication flow between different Solr instances using Flume and Python","4+ years\u2019 experience on Java 8, lambdas and Design Patterns","Hands-on experience with Front-End solutions development using Extjs and HTML. Knowledge of web development tools such as Firebug","Experience with JMS and Apache ActiveMQ message broker","Development of software solutions following agile practices (Kanban) and using versioning control systems such as SVN and Git","Experience with TDD development using Junit framework for unit testing both in Java and Python","Hands-on experience with WordPress plug-ins development using JavaScript and PHP","Hands-on experience with different Hadoop clusters (Cloudera and Ambari)"],"keywords":["Software Development Leader","Back-End","Business Logic Manager","R&D Big Data","R&D Machine Learning","R&D Computer Vision","R&D Big Data","R&D Big Data","Java","Front-End","JMS","Agile","TDD","WordPress","Hadoop"],"x":{"__ndarray__":"FVZqQ2QA8j/m3/rqFqDoP2WEwfQTcPM/IjZy3m8J5T/wSk11pGyyP6KUn2fZTuc/TFjp7RPe0j9iVyX76g3+P46JST3Uuv0/yNkbwClj+T9AYUJ+D+KmP8ocdG7pWPg/Irrr/tfR6j9qTo/03uz8P2CAwVkvyc0/","dtype":"float64","shape":[15]},"y":{"__ndarray__":"sJeJU8sfvT9EG+q8uBDJP3Gmb/txQuo/xIWv0kLs6T8AhbtbY67mP1AeqCsche8/0Ly21aVToD+OdIoXDBHdP5iFY38/4+o/RG0dBhwP7j/tQEQLAvrpP1K3TA8RU+c/WiCLZZWT2D+OdNYFJrvvP4gvO9VR7t0/","dtype":"float64","shape":[15]}},"selected":{"id":"92717","type":"Selection"},"selection_policy":{"id":"92716","type":"UnionRenderers"}},"id":"91499","type":"ColumnDataSource"},{"attributes":{"fill_color":{"value":"#480968"},"line_color":{"value":"#480968"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"91537","type":"Circle"}],"root_ids":["91500"]},"title":"Bokeh Application","version":"1.0.2"}};
+  var render_items = [{"docid":"4901d196-e572-4185-85de-a15836c921e2","roots":{"91500":"98112e8e-37b1-4cfd-93ed-2cb5e821159a"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
@@ -12531,10 +12514,10 @@ var element = $('#5aa0fba6-9d68-45b7-9963-728e7f98cadc');
 
 
 
-<div id="5a86ef75-15be-472e-a326-ae70eb9627e7"></div>
+<div id="4af708c1-9caa-4a73-b751-392505aa2ce8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5a86ef75-15be-472e-a326-ae70eb9627e7');
+var element = $('#4af708c1-9caa-4a73-b751-392505aa2ce8');
 
 (function(root) {
   function now() {
@@ -12835,10 +12818,10 @@ var element = $('#5a86ef75-15be-472e-a326-ae70eb9627e7');
 
 
 
-<div id="d8efd088-4733-47f4-baea-42f2ec7591bc"></div>
+<div id="62131f7d-4bbd-4835-b3cc-dd91936b1519"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d8efd088-4733-47f4-baea-42f2ec7591bc');
+var element = $('#62131f7d-4bbd-4835-b3cc-dd91936b1519');
 (function(root) {
   function embed_document(root) {
     
@@ -13045,10 +13028,10 @@ var element = $('#d8efd088-4733-47f4-baea-42f2ec7591bc');
 
 
 
-<div id="a95e405b-43fc-4024-a506-1aae9a0a1e51"></div>
+<div id="a31342c5-1d70-4e57-a25b-2dd77781b2ae"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a95e405b-43fc-4024-a506-1aae9a0a1e51');
+var element = $('#a31342c5-1d70-4e57-a25b-2dd77781b2ae');
 
 (function(root) {
   function now() {
@@ -13349,10 +13332,10 @@ var element = $('#a95e405b-43fc-4024-a506-1aae9a0a1e51');
 
 
 
-<div id="ee76ba47-06fa-467f-8617-a505c65eae41"></div>
+<div id="5fb12dfb-39ac-40af-ad0d-c8e58fee4c76"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ee76ba47-06fa-467f-8617-a505c65eae41');
+var element = $('#5fb12dfb-39ac-40af-ad0d-c8e58fee4c76');
 (function(root) {
   function embed_document(root) {
     
@@ -13436,10 +13419,10 @@ var element = $('#ee76ba47-06fa-467f-8617-a505c65eae41');
 
 
 
-<div id="a7a512b2-9409-46d3-b9ca-890f03554774"></div>
+<div id="c817d8d1-4b9f-40c7-aa9d-124f91a9e02b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a7a512b2-9409-46d3-b9ca-890f03554774');
+var element = $('#c817d8d1-4b9f-40c7-aa9d-124f91a9e02b');
 
 (function(root) {
   function now() {
@@ -13740,10 +13723,10 @@ var element = $('#a7a512b2-9409-46d3-b9ca-890f03554774');
 
 
 
-<div id="806faca3-1812-4114-9f86-716c8cdc3e3e"></div>
+<div id="47bcac02-82c2-4b8f-9d88-464f71559f0b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#806faca3-1812-4114-9f86-716c8cdc3e3e');
+var element = $('#47bcac02-82c2-4b8f-9d88-464f71559f0b');
 (function(root) {
   function embed_document(root) {
     
@@ -14015,10 +13998,10 @@ Tokyo, November 2013</p>
 
 
 
-<div id="fef6fa07-63db-429a-83ba-dc817e5205d3"></div>
+<div id="79ddbfe0-7138-4e34-bdd0-d71da99a5e87"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fef6fa07-63db-429a-83ba-dc817e5205d3');
+var element = $('#79ddbfe0-7138-4e34-bdd0-d71da99a5e87');
 
 (function(root) {
   function now() {
@@ -14319,10 +14302,10 @@ var element = $('#fef6fa07-63db-429a-83ba-dc817e5205d3');
 
 
 
-<div id="06555967-e11f-4b63-9b99-6a750e23f632"></div>
+<div id="6c031b00-1939-45f7-9bdb-2fb6dce2382a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#06555967-e11f-4b63-9b99-6a750e23f632');
+var element = $('#6c031b00-1939-45f7-9bdb-2fb6dce2382a');
 (function(root) {
   function embed_document(root) {
     
@@ -14362,8 +14345,7 @@ var element = $('#06555967-e11f-4b63-9b99-6a750e23f632');
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="GET-IN-TOUCH">GET IN TOUCH<a class="anchor-link" href="#GET-IN-TOUCH">&#182;</a></h3><p>Feel free to contact me at:</p>
-<center><a href="mailto:luca.fontanili93@gmail.com"><i class="fa fa-envelope"></i> luca.fontanili93@gmail.com</a></center><p><strong>This is still a work in progress</strong></p>
-
+<center><a href="mailto:luca.fontanili93@gmail.com"><i class="fa fa-envelope"></i>luca.fontanili93@gmail.com</a></center>
 </div>
 </div>
 </div>
@@ -14371,7 +14353,8 @@ var element = $('#06555967-e11f-4b63-9b99-6a750e23f632');
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="spinner.gif" width=200 align="center"></p>
+<p><center>**This is still a work in progress**</center>
+<img src="spinner.gif" width=200 align="center"></p>
 
 </div>
 </div>

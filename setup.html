@@ -12,30 +12,13 @@ $(document).ready(function(){
     //$.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
     //  alert(JSON.stringify(data, null, 2));
     //});
-    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 )
-    {
-        alert('Opera');
-    }
-    else if(navigator.userAgent.indexOf("Chrome") != -1 )
-    {
-        var ret = confirm("It looks like you're using Chrome💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
+    if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) {
+      var ret = confirm("It looks like you're using Internet Explorer💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
         if (ret == true) {
             window.location.href = 'fontanili.pdf';
         } else {
             alert("Sorry, your experience won't be flawless");
         }
-    }
-    else if(navigator.userAgent.indexOf("Safari") != -1)
-    {
-        alert('Safari');
-    }
-    else if(navigator.userAgent.indexOf("Firefox") != -1 )
-    {
-         alert('Firefox');
-    }
-    else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
-    {
-      alert('IE');
     }
 });
 </script>
