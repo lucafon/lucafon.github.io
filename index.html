@@ -11781,7 +11781,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[184]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11793,15 +11793,8 @@ div#notebook {
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">&lt;style&gt;</span>
-<span class="s2">.output {</span>
-<span class="s2">    display: flex;</span>
-<span class="s2">    align-items: center;</span>
-<span class="s2">    text-align: center;</span>
-<span class="s2">}</span>
-<span class="s2">&lt;/style&gt;</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">))</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;setup.html&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 </pre></div>
 
 </div>
@@ -11819,15 +11812,47 @@ div#notebook {
 
 
 <div class="output_html rendered_html output_subarea ">
-
 <style>
+.container { width:100% !important; }
 .output {
     display: flex;
     align-items: center;
     text-align: center;
 }
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    //$.getJSON('http://www.geoplugin.net/json.gp?jsoncallback=?', function(data) {
+    //  alert(JSON.stringify(data, null, 2));
+    //});
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 )
+    {
+        alert('Opera');
+    }
+    else if(navigator.userAgent.indexOf("Chrome") != -1 )
+    {
+        var ret = confirm("It looks like you're using Chrome💔. This resume isn't fully compatible with this browser yet. Would you like to see the standard PDF version?");
+        if (ret == true) {
+            window.location.href = 'Untitled.pdf';
+        } else {
+            alert('Your experience');
+        }
+    }
+    else if(navigator.userAgent.indexOf("Safari") != -1)
+    {
+        alert('Safari');
+    }
+    else if(navigator.userAgent.indexOf("Firefox") != -1 )
+    {
+         alert('Firefox');
+    }
+    else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+    {
+      alert('IE');
+    }
+});
+</script>
 </div>
 
 </div>
@@ -11846,7 +11871,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[148]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;download.html&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -11923,7 +11948,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[149]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">load_map_frame</span><span class="p">():</span>
@@ -12013,10 +12038,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[186]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_working_experience</span><span class="p">(</span><span class="n">employee</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">700</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_working_experience</span><span class="p">(</span><span class="n">employee</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">500</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">employee</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Do you work on your own?&#39;</span><span class="p">)</span>
     <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">show</span>
@@ -12046,8 +12071,8 @@ div#notebook {
     <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_width</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">plot_height</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="n">TOOLTIPS</span><span class="p">,</span> <span class="n">toolbar_location</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">y_range</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.1</span>
     <span class="n">p</span><span class="o">.</span><span class="n">y_range</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="mf">1.1</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="mf">2.2</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">start</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.3</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">x_range</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="mf">2.4</span>
 
     <span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#480968&quot;</span><span class="p">)</span>
 
@@ -12075,7 +12100,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[188]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_working_experience</span><span class="p">(</span><span class="s1">&#39;Ubiq&#39;</span><span class="p">)</span>
@@ -12099,7 +12124,7 @@ div#notebook {
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="8777">Loading BokehJS ...</span>
+        <span id="46117">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -12113,10 +12138,10 @@ div#notebook {
 
 
 
-<div id="65e39f76-5604-4c29-9ed2-613ee0c0af95"></div>
+<div id="5003c019-62d3-4ec5-ad41-684c0b5725db"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#65e39f76-5604-4c29-9ed2-613ee0c0af95');
+var element = $('#5003c019-62d3-4ec5-ad41-684c0b5725db');
 
 (function(root) {
   function now() {
@@ -12276,7 +12301,7 @@ var element = $('#65e39f76-5604-4c29-9ed2-613ee0c0af95');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("8777");
+    var el = document.getElementById("46117");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -12330,9 +12355,9 @@ var element = $('#65e39f76-5604-4c29-9ed2-613ee0c0af95');
       console.log("Bokeh: injecting script tag for BokehJS library: ", url);
       document.getElementsByTagName("head")[0].appendChild(s);
     }
-  };var element = document.getElementById("8777");
+  };var element = document.getElementById("46117");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid '8777' but no matching script tag was found. ")
+    console.log("Bokeh: ERROR: autoload.js configured with elementid '46117' but no matching script tag was found. ")
     return false;
   }
 
@@ -12369,7 +12394,7 @@ var element = $('#65e39f76-5604-4c29-9ed2-613ee0c0af95');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("8777")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("46117")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -12403,7 +12428,7 @@ var element = $('#65e39f76-5604-4c29-9ed2-613ee0c0af95');
 
 
 
-  <div class="bk-root" id="c0a3074b-ce1d-4830-92d3-e3aff65c050a"></div>
+  <div class="bk-root" id="3969605e-595b-43b3-bcac-2dd73954f878"></div>
 
 </div>
 
@@ -12417,15 +12442,15 @@ var element = $('#65e39f76-5604-4c29-9ed2-613ee0c0af95');
 
 
 
-<div id="b63a35f3-2126-4a38-a21c-fa890a60ad61"></div>
+<div id="f33fb663-ba2f-4c91-92e1-564498763577"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b63a35f3-2126-4a38-a21c-fa890a60ad61');
+var element = $('#f33fb663-ba2f-4c91-92e1-564498763577');
 (function(root) {
   function embed_document(root) {
     
-  var docs_json = {"6cedbc63-6728-461a-b458-a86932a9c49d":{"roots":{"references":[{"attributes":{"below":[{"id":"8788","type":"LinearAxis"}],"left":[{"id":"8793","type":"LinearAxis"}],"plot_height":700,"plot_width":700,"renderers":[{"id":"8788","type":"LinearAxis"},{"id":"8792","type":"Grid"},{"id":"8793","type":"LinearAxis"},{"id":"8797","type":"Grid"},{"id":"8807","type":"BoxAnnotation"},{"id":"8818","type":"GlyphRenderer"},{"id":"8820","type":"LabelSet"}],"title":{"id":"9107","type":"Title"},"toolbar":{"id":"8805","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"8780","type":"DataRange1d"},"x_scale":{"id":"8784","type":"LinearScale"},"y_range":{"id":"8782","type":"DataRange1d"},"y_scale":{"id":"8786","type":"LinearScale"}},"id":"8779","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"data":{"descriptions":["Coordinator of the Back-End development team (5+ developers)","Development of Back-End system of different mobile applications in association with Poste Italiane (Extra Sconti, 100K+ active users per month), CartaSi (CashLessCity), Nivea (ConTATTO NIVEA), Barilla (Mio Mulino) and Samsung","Business Logic Manager of the project iCoop, in collaboration with Coop Italia. Manager of the Back-End development of the new couponing system within the iCoop mobile app","Development of the Back-End system and REST Web Services of Ti Frutta, an iOS and Android mobile app, using Data Mining and Machine Learning techniques on Cloud platform. Development of advanced and optimized algorithms to detect products on images of receipts using NoSQL databases (Solr, HBase) and OCR algorithms to read text from pictures using advanced image pre-processing techniques","Study and development of a predictive model that finds similarities between texts of different images using Text Mining and ML techniques","Development of a server-side binarization algorithm of raw receipt images using different image processing approaches (edge-detection, features extraction, thresholding) using OpenCV in Python","Development of a reliable tool to import data from RDBMS to Hadoop ecosystem using Sqoop, Spark, Hive and Impala","Development of a data replication flow between different Solr instances using Flume and Python","4+ years\u2019 experience on Java 8, lambdas and Design Patterns","Hands-on experience with Front-End solutions development using Extjs and HTML. Knowledge of web development tools such as Firebug","Experience with JMS and Apache ActiveMQ message broker","Development of software solutions following agile practices (Kanban) and using versioning control systems such as SVN and Git","Experience with TDD development using Junit framework for unit testing both in Java and Python","Hands-on experience with WordPress plug-ins development using JavaScript and PHP","Hands-on experience with different Hadoop clusters (Cloudera and Ambari)"],"keywords":["Software Development Leader","Back-End","Business Logic Manager","R&D Big Data","R&D Machine Learning","R&D Computer Vision","R&D Big Data","R&D Big Data","Java","Front-End","JMS","Agile","TDD","WordPress","Hadoop"],"x":{"__ndarray__":"hRKv+bZU8D8YbAO58UbdPwf8LwuCJ/o/6JFzPrxw9z8CY+QaOe/sPxBFfMoB674/gJ9x7dxJ6T92LTbOtR/jP2Cjnbrqi6g/MMlfVXf+8z+GM5c2iST8P3AOuX2W4Ok/7ARTVmNV+j+iUMzG7MPhPwL7EBdOde4/","dtype":"float64","shape":[15]},"y":{"__ndarray__":"+CXsN7VY3T/aFM88uSbbP/BW70TM6ec/+NPjIDKSsz8h0NgDdgjiPy5x63Tkhdw/ghHWyOds2z9s34c3VoXvP16N9QjDHdY/ml1VN+/G5T9179z3oNLvPxheB+HJj9Q/QDDF2UeNxz+w9Av16afEPxDJ4k/LeMo/","dtype":"float64","shape":[15]}},"selected":{"id":"9114","type":"Selection"},"selection_policy":{"id":"9113","type":"UnionRenderers"}},"id":"8778","type":"ColumnDataSource"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"8807","type":"BoxAnnotation"},{"attributes":{"data_source":{"id":"8778","type":"ColumnDataSource"},"glyph":{"id":"8816","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"8817","type":"Circle"},"selection_glyph":null,"view":{"id":"8819","type":"CDSView"}},"id":"8818","type":"GlyphRenderer"},{"attributes":{"source":{"id":"8778","type":"ColumnDataSource"}},"id":"8819","type":"CDSView"},{"attributes":{},"id":"8803","type":"HelpTool"},{"attributes":{"plot":{"id":"8779","subtype":"Figure","type":"Plot"},"source":{"id":"8778","type":"ColumnDataSource"},"text":{"field":"keywords"},"text_align":"center","text_color":{"value":"#555555"},"text_font_size":{"value":"10pt"},"x":{"field":"x"},"y":{"field":"y"},"y_offset":{"value":-30}},"id":"8820","type":"LabelSet"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"8798","type":"PanTool"},{"id":"8799","type":"WheelZoomTool"},{"id":"8800","type":"BoxZoomTool"},{"id":"8801","type":"SaveTool"},{"id":"8802","type":"ResetTool"},{"id":"8803","type":"HelpTool"},{"id":"8804","type":"HoverTool"}]},"id":"8805","type":"Toolbar"},{"attributes":{"dimension":1,"plot":{"id":"8779","subtype":"Figure","type":"Plot"},"ticker":{"id":"8794","type":"BasicTicker"}},"id":"8797","type":"Grid"},{"attributes":{},"id":"8798","type":"PanTool"},{"attributes":{"callback":null,"end":1.1,"start":-0.1},"id":"8782","type":"DataRange1d"},{"attributes":{},"id":"8794","type":"BasicTicker"},{"attributes":{"callback":null,"end":2.2,"start":-0.2},"id":"8780","type":"DataRange1d"},{"attributes":{"plot":null,"text":""},"id":"9107","type":"Title"},{"attributes":{"formatter":{"id":"9108","type":"BasicTickFormatter"},"plot":{"id":"8779","subtype":"Figure","type":"Plot"},"ticker":{"id":"8794","type":"BasicTicker"}},"id":"8793","type":"LinearAxis"},{"attributes":{},"id":"9108","type":"BasicTickFormatter"},{"attributes":{},"id":"8786","type":"LinearScale"},{"attributes":{"formatter":{"id":"9110","type":"BasicTickFormatter"},"plot":{"id":"8779","subtype":"Figure","type":"Plot"},"ticker":{"id":"8789","type":"BasicTicker"}},"id":"8788","type":"LinearAxis"},{"attributes":{},"id":"9110","type":"BasicTickFormatter"},{"attributes":{},"id":"8789","type":"BasicTicker"},{"attributes":{},"id":"9113","type":"UnionRenderers"},{"attributes":{"plot":{"id":"8779","subtype":"Figure","type":"Plot"},"ticker":{"id":"8789","type":"BasicTicker"}},"id":"8792","type":"Grid"},{"attributes":{},"id":"9114","type":"Selection"},{"attributes":{},"id":"8784","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"8817","type":"Circle"},{"attributes":{"fill_color":{"value":"#480968"},"line_color":{"value":"#480968"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"8816","type":"Circle"},{"attributes":{"callback":null,"tooltips":"\n        <div style=\"width:300px\">\n            <span style=\"font-size: 17px;\"><b>@keywords</b></span>\n            <span style=\"font-size: 15px;\">@descriptions</span>\n        </div>\n    "},"id":"8804","type":"HoverTool"},{"attributes":{},"id":"8799","type":"WheelZoomTool"},{"attributes":{"overlay":{"id":"8807","type":"BoxAnnotation"}},"id":"8800","type":"BoxZoomTool"},{"attributes":{},"id":"8801","type":"SaveTool"},{"attributes":{},"id":"8802","type":"ResetTool"}],"root_ids":["8779"]},"title":"Bokeh Application","version":"1.0.2"}};
-  var render_items = [{"docid":"6cedbc63-6728-461a-b458-a86932a9c49d","roots":{"8779":"c0a3074b-ce1d-4830-92d3-e3aff65c050a"}}];
+  var docs_json = {"675bd5f1-5392-4a8a-9820-83d9df1e0013":{"roots":{"references":[{"attributes":{"below":[{"id":"46128","type":"LinearAxis"}],"left":[{"id":"46133","type":"LinearAxis"}],"plot_height":500,"plot_width":500,"renderers":[{"id":"46128","type":"LinearAxis"},{"id":"46132","type":"Grid"},{"id":"46133","type":"LinearAxis"},{"id":"46137","type":"Grid"},{"id":"46147","type":"BoxAnnotation"},{"id":"46158","type":"GlyphRenderer"},{"id":"46160","type":"LabelSet"}],"title":{"id":"46951","type":"Title"},"toolbar":{"id":"46145","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"46120","type":"DataRange1d"},"x_scale":{"id":"46124","type":"LinearScale"},"y_range":{"id":"46122","type":"DataRange1d"},"y_scale":{"id":"46126","type":"LinearScale"}},"id":"46119","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"46957","type":"UnionRenderers"},{"attributes":{"plot":null,"text":""},"id":"46951","type":"Title"},{"attributes":{},"id":"46952","type":"BasicTickFormatter"},{"attributes":{"overlay":{"id":"46147","type":"BoxAnnotation"}},"id":"46140","type":"BoxZoomTool"},{"attributes":{"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46129","type":"BasicTicker"}},"id":"46132","type":"Grid"},{"attributes":{},"id":"46126","type":"LinearScale"},{"attributes":{"callback":null,"end":2.4,"start":-0.3},"id":"46120","type":"DataRange1d"},{"attributes":{"formatter":{"id":"46952","type":"BasicTickFormatter"},"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46134","type":"BasicTicker"}},"id":"46133","type":"LinearAxis"},{"attributes":{"fill_color":{"value":"#480968"},"line_color":{"value":"#480968"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"46156","type":"Circle"},{"attributes":{"formatter":{"id":"46954","type":"BasicTickFormatter"},"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46129","type":"BasicTicker"}},"id":"46128","type":"LinearAxis"},{"attributes":{},"id":"46134","type":"BasicTicker"},{"attributes":{},"id":"46138","type":"PanTool"},{"attributes":{},"id":"46129","type":"BasicTicker"},{"attributes":{"callback":null,"data":{"descriptions":["Coordinator of the Back-End development team (5+ developers)","Development of Back-End system of different mobile applications in association with Poste Italiane (Extra Sconti, 100K+ active users per month), CartaSi (CashLessCity), Nivea (ConTATTO NIVEA), Barilla (Mio Mulino) and Samsung","Business Logic Manager of the project iCoop, in collaboration with Coop Italia. Manager of the Back-End development of the new couponing system within the iCoop mobile app","Development of the Back-End system and REST Web Services of Ti Frutta, an iOS and Android mobile app, using Data Mining and Machine Learning techniques on Cloud platform. Development of advanced and optimized algorithms to detect products on images of receipts using NoSQL databases (Solr, HBase) and OCR algorithms to read text from pictures using advanced image pre-processing techniques","Study and development of a predictive model that finds similarities between texts of different images using Text Mining and ML techniques","Development of a server-side binarization algorithm of raw receipt images using different image processing approaches (edge-detection, features extraction, thresholding) using OpenCV in Python","Development of a reliable tool to import data from RDBMS to Hadoop ecosystem using Sqoop, Spark, Hive and Impala","Development of a data replication flow between different Solr instances using Flume and Python","4+ years\u2019 experience on Java 8, lambdas and Design Patterns","Hands-on experience with Front-End solutions development using Extjs and HTML. Knowledge of web development tools such as Firebug","Experience with JMS and Apache ActiveMQ message broker","Development of software solutions following agile practices (Kanban) and using versioning control systems such as SVN and Git","Experience with TDD development using Junit framework for unit testing both in Java and Python","Hands-on experience with WordPress plug-ins development using JavaScript and PHP","Hands-on experience with different Hadoop clusters (Cloudera and Ambari)"],"keywords":["Software Development Leader","Back-End","Business Logic Manager","R&D Big Data","R&D Machine Learning","R&D Computer Vision","R&D Big Data","R&D Big Data","Java","Front-End","JMS","Agile","TDD","WordPress","Hadoop"],"x":{"__ndarray__":"fsmOfp2T4T9eeT4zqavrP97zdV07qvk/MDid3KSU8D/j/enivGLwP/qpHi+HAe8/zwhiwHrd+D++Z3YKlMv6Pxz6vwC1LO0/AO+kThB12j8GyAqBgJ/nP/DncfJ/n7c/JI3IjtrT3z8sJI3zlmLXP0Rln6KcPdg/","dtype":"float64","shape":[15]},"y":{"__ndarray__":"SCsqzdlQyD9OE6R11FXXP1xv2acaQeo/qOEG/V6cwD+mshy9ylfvP6B4/c4G2tA/SLciekIQ2z+pwnIKc7vkP8u3f9VmPeg/jP+7n8F32z+BvnFTXGTrP0GvWRvL7+g/2HLxxdEg6z8Aw+0NfDWnP6ckiqPim+Y/","dtype":"float64","shape":[15]}},"selected":{"id":"46958","type":"Selection"},"selection_policy":{"id":"46957","type":"UnionRenderers"}},"id":"46118","type":"ColumnDataSource"},{"attributes":{"data_source":{"id":"46118","type":"ColumnDataSource"},"glyph":{"id":"46156","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"46157","type":"Circle"},"selection_glyph":null,"view":{"id":"46159","type":"CDSView"}},"id":"46158","type":"GlyphRenderer"},{"attributes":{},"id":"46141","type":"SaveTool"},{"attributes":{},"id":"46142","type":"ResetTool"},{"attributes":{},"id":"46139","type":"WheelZoomTool"},{"attributes":{"source":{"id":"46118","type":"ColumnDataSource"}},"id":"46159","type":"CDSView"},{"attributes":{"dimension":1,"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"ticker":{"id":"46134","type":"BasicTicker"}},"id":"46137","type":"Grid"},{"attributes":{"callback":null,"end":1.1,"start":-0.1},"id":"46122","type":"DataRange1d"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"46147","type":"BoxAnnotation"},{"attributes":{"plot":{"id":"46119","subtype":"Figure","type":"Plot"},"source":{"id":"46118","type":"ColumnDataSource"},"text":{"field":"keywords"},"text_align":"center","text_color":{"value":"#555555"},"text_font_size":{"value":"10pt"},"x":{"field":"x"},"y":{"field":"y"},"y_offset":{"value":-30}},"id":"46160","type":"LabelSet"},{"attributes":{},"id":"46954","type":"BasicTickFormatter"},{"attributes":{"callback":null,"tooltips":"\n        <div style=\"width:300px\">\n            <span style=\"font-size: 17px;\"><b>@keywords</b></span>\n            <span style=\"font-size: 15px;\">@descriptions</span>\n        </div>\n    "},"id":"46144","type":"HoverTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"46138","type":"PanTool"},{"id":"46139","type":"WheelZoomTool"},{"id":"46140","type":"BoxZoomTool"},{"id":"46141","type":"SaveTool"},{"id":"46142","type":"ResetTool"},{"id":"46143","type":"HelpTool"},{"id":"46144","type":"HoverTool"}]},"id":"46145","type":"Toolbar"},{"attributes":{},"id":"46143","type":"HelpTool"},{"attributes":{},"id":"46958","type":"Selection"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"46157","type":"Circle"},{"attributes":{},"id":"46124","type":"LinearScale"}],"root_ids":["46119"]},"title":"Bokeh Application","version":"1.0.2"}};
+  var render_items = [{"docid":"675bd5f1-5392-4a8a-9820-83d9df1e0013","roots":{"46119":"3969605e-595b-43b3-bcac-2dd73954f878"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
@@ -12468,10 +12493,10 @@ var element = $('#b63a35f3-2126-4a38-a21c-fa890a60ad61');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[189]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_working_experience</span><span class="p">(</span><span class="s1">&#39;Datalogic&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_working_experience</span><span class="p">(</span><span class="s1">&#39;Datalogic&#39;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12492,7 +12517,7 @@ var element = $('#b63a35f3-2126-4a38-a21c-fa890a60ad61');
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="1109">Loading BokehJS ...</span>
+        <span id="47013">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -12506,10 +12531,10 @@ var element = $('#b63a35f3-2126-4a38-a21c-fa890a60ad61');
 
 
 
-<div id="56ae020a-023a-437c-8a6b-eca55cd23319"></div>
+<div id="9ff49ee6-2ca0-4cdf-b14e-50316c3ac61f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#56ae020a-023a-437c-8a6b-eca55cd23319');
+var element = $('#9ff49ee6-2ca0-4cdf-b14e-50316c3ac61f');
 
 (function(root) {
   function now() {
@@ -12669,7 +12694,7 @@ var element = $('#56ae020a-023a-437c-8a6b-eca55cd23319');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("1109");
+    var el = document.getElementById("47013");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -12723,9 +12748,9 @@ var element = $('#56ae020a-023a-437c-8a6b-eca55cd23319');
       console.log("Bokeh: injecting script tag for BokehJS library: ", url);
       document.getElementsByTagName("head")[0].appendChild(s);
     }
-  };var element = document.getElementById("1109");
+  };var element = document.getElementById("47013");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid '1109' but no matching script tag was found. ")
+    console.log("Bokeh: ERROR: autoload.js configured with elementid '47013' but no matching script tag was found. ")
     return false;
   }
 
@@ -12762,7 +12787,7 @@ var element = $('#56ae020a-023a-437c-8a6b-eca55cd23319');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("1109")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("47013")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -12796,7 +12821,7 @@ var element = $('#56ae020a-023a-437c-8a6b-eca55cd23319');
 
 
 
-  <div class="bk-root" id="8dc572ee-1ffe-4f82-95e2-9cbe2645da4f"></div>
+  <div class="bk-root" id="134af2aa-7805-41d4-8e71-4283ba10d59f"></div>
 
 </div>
 
@@ -12810,15 +12835,15 @@ var element = $('#56ae020a-023a-437c-8a6b-eca55cd23319');
 
 
 
-<div id="909e0557-9f59-4d9f-941a-bb7f97bcfde5"></div>
+<div id="87058dd6-533b-4504-8611-522cbd8e3793"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#909e0557-9f59-4d9f-941a-bb7f97bcfde5');
+var element = $('#87058dd6-533b-4504-8611-522cbd8e3793');
 (function(root) {
   function embed_document(root) {
     
-  var docs_json = {"ef53ef01-dbcf-4052-8bab-03ebdde82381":{"roots":{"references":[{"attributes":{"below":[{"id":"1120","type":"LinearAxis"}],"left":[{"id":"1125","type":"LinearAxis"}],"plot_height":500,"plot_width":500,"renderers":[{"id":"1120","type":"LinearAxis"},{"id":"1124","type":"Grid"},{"id":"1125","type":"LinearAxis"},{"id":"1129","type":"Grid"},{"id":"1139","type":"BoxAnnotation"},{"id":"1150","type":"GlyphRenderer"},{"id":"1152","type":"LabelSet"}],"title":{"id":"1164","type":"Title"},"toolbar":{"id":"1137","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"1112","type":"DataRange1d"},"x_scale":{"id":"1116","type":"LinearScale"},"y_range":{"id":"1114","type":"DataRange1d"},"y_scale":{"id":"1118","type":"LinearScale"}},"id":"1111","subtype":"Figure","type":"Plot"},{"attributes":{"callback":null,"tooltips":"\n        <div style=\"width:300px\">\n            <span style=\"font-size: 17px;\"><b>@keywords</b></span>\n            <span style=\"font-size: 15px;\">@descriptions</span>\n        </div>\n    "},"id":"1136","type":"HoverTool"},{"attributes":{"callback":null,"end":2.2,"start":-0.2},"id":"1112","type":"DataRange1d"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1130","type":"PanTool"},{"id":"1131","type":"WheelZoomTool"},{"id":"1132","type":"BoxZoomTool"},{"id":"1133","type":"SaveTool"},{"id":"1134","type":"ResetTool"},{"id":"1135","type":"HelpTool"},{"id":"1136","type":"HoverTool"}]},"id":"1137","type":"Toolbar"},{"attributes":{"data_source":{"id":"1110","type":"ColumnDataSource"},"glyph":{"id":"1148","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1149","type":"Circle"},"selection_glyph":null,"view":{"id":"1151","type":"CDSView"}},"id":"1150","type":"GlyphRenderer"},{"attributes":{},"id":"1135","type":"HelpTool"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1139","type":"BoxAnnotation"},{"attributes":{},"id":"1130","type":"PanTool"},{"attributes":{"callback":null,"data":{"descriptions":["Working on the parallelization of a Computer Vision algorithm (Zero Mean Normalized Cross-Correlation), using the NVIDIA CUDA framework on a GPU embedded in a SoC (Tegra K1)","Development of testing programs for Computer Vision software solutions using Python"],"keywords":["R&D Computer Vision","Python"],"x":{"__ndarray__":"5E21ywr56T9rd9T2uqP8Pw==","dtype":"float64","shape":[2]},"y":{"__ndarray__":"wO1TrhrK2z8ADy0LlBq1Pw==","dtype":"float64","shape":[2]}},"selected":{"id":"1171","type":"Selection"},"selection_policy":{"id":"1170","type":"UnionRenderers"}},"id":"1110","type":"ColumnDataSource"},{"attributes":{},"id":"1134","type":"ResetTool"},{"attributes":{"fill_color":{"value":"#480968"},"line_color":{"value":"#480968"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"1148","type":"Circle"},{"attributes":{"source":{"id":"1110","type":"ColumnDataSource"}},"id":"1151","type":"CDSView"},{"attributes":{},"id":"1118","type":"LinearScale"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"1149","type":"Circle"},{"attributes":{"plot":null,"text":""},"id":"1164","type":"Title"},{"attributes":{},"id":"1126","type":"BasicTicker"},{"attributes":{"formatter":{"id":"1165","type":"BasicTickFormatter"},"plot":{"id":"1111","subtype":"Figure","type":"Plot"},"ticker":{"id":"1126","type":"BasicTicker"}},"id":"1125","type":"LinearAxis"},{"attributes":{},"id":"1131","type":"WheelZoomTool"},{"attributes":{"formatter":{"id":"1167","type":"BasicTickFormatter"},"plot":{"id":"1111","subtype":"Figure","type":"Plot"},"ticker":{"id":"1121","type":"BasicTicker"}},"id":"1120","type":"LinearAxis"},{"attributes":{"plot":{"id":"1111","subtype":"Figure","type":"Plot"},"source":{"id":"1110","type":"ColumnDataSource"},"text":{"field":"keywords"},"text_align":"center","text_color":{"value":"#555555"},"text_font_size":{"value":"10pt"},"x":{"field":"x"},"y":{"field":"y"},"y_offset":{"value":-30}},"id":"1152","type":"LabelSet"},{"attributes":{},"id":"1165","type":"BasicTickFormatter"},{"attributes":{"overlay":{"id":"1139","type":"BoxAnnotation"}},"id":"1132","type":"BoxZoomTool"},{"attributes":{},"id":"1171","type":"Selection"},{"attributes":{},"id":"1170","type":"UnionRenderers"},{"attributes":{"dimension":1,"plot":{"id":"1111","subtype":"Figure","type":"Plot"},"ticker":{"id":"1126","type":"BasicTicker"}},"id":"1129","type":"Grid"},{"attributes":{},"id":"1133","type":"SaveTool"},{"attributes":{},"id":"1167","type":"BasicTickFormatter"},{"attributes":{"callback":null,"end":1.1,"start":-0.1},"id":"1114","type":"DataRange1d"},{"attributes":{},"id":"1116","type":"LinearScale"},{"attributes":{},"id":"1121","type":"BasicTicker"},{"attributes":{"plot":{"id":"1111","subtype":"Figure","type":"Plot"},"ticker":{"id":"1121","type":"BasicTicker"}},"id":"1124","type":"Grid"}],"root_ids":["1111"]},"title":"Bokeh Application","version":"1.0.2"}};
-  var render_items = [{"docid":"ef53ef01-dbcf-4052-8bab-03ebdde82381","roots":{"1111":"8dc572ee-1ffe-4f82-95e2-9cbe2645da4f"}}];
+  var docs_json = {"4ecb88d0-acf0-4fb5-b339-4bca4a87fc77":{"roots":{"references":[{"attributes":{"below":[{"id":"47024","type":"LinearAxis"}],"left":[{"id":"47029","type":"LinearAxis"}],"plot_height":500,"plot_width":500,"renderers":[{"id":"47024","type":"LinearAxis"},{"id":"47028","type":"Grid"},{"id":"47029","type":"LinearAxis"},{"id":"47033","type":"Grid"},{"id":"47043","type":"BoxAnnotation"},{"id":"47054","type":"GlyphRenderer"},{"id":"47056","type":"LabelSet"}],"title":{"id":"47856","type":"Title"},"toolbar":{"id":"47041","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"47016","type":"DataRange1d"},"x_scale":{"id":"47020","type":"LinearScale"},"y_range":{"id":"47018","type":"DataRange1d"},"y_scale":{"id":"47022","type":"LinearScale"}},"id":"47015","subtype":"Figure","type":"Plot"},{"attributes":{"formatter":{"id":"47857","type":"BasicTickFormatter"},"plot":{"id":"47015","subtype":"Figure","type":"Plot"},"ticker":{"id":"47030","type":"BasicTicker"}},"id":"47029","type":"LinearAxis"},{"attributes":{"callback":null,"tooltips":"\n        <div style=\"width:300px\">\n            <span style=\"font-size: 17px;\"><b>@keywords</b></span>\n            <span style=\"font-size: 15px;\">@descriptions</span>\n        </div>\n    "},"id":"47040","type":"HoverTool"},{"attributes":{"callback":null,"end":1.1,"start":-0.1},"id":"47018","type":"DataRange1d"},{"attributes":{},"id":"47020","type":"LinearScale"},{"attributes":{"fill_color":{"value":"#480968"},"line_color":{"value":"#480968"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"47052","type":"Circle"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"47034","type":"PanTool"},{"id":"47035","type":"WheelZoomTool"},{"id":"47036","type":"BoxZoomTool"},{"id":"47037","type":"SaveTool"},{"id":"47038","type":"ResetTool"},{"id":"47039","type":"HelpTool"},{"id":"47040","type":"HoverTool"}]},"id":"47041","type":"Toolbar"},{"attributes":{},"id":"47022","type":"LinearScale"},{"attributes":{"dimension":1,"plot":{"id":"47015","subtype":"Figure","type":"Plot"},"ticker":{"id":"47030","type":"BasicTicker"}},"id":"47033","type":"Grid"},{"attributes":{"plot":null,"text":""},"id":"47856","type":"Title"},{"attributes":{},"id":"47037","type":"SaveTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"size":{"units":"screen","value":15},"x":{"field":"x"},"y":{"field":"y"}},"id":"47053","type":"Circle"},{"attributes":{},"id":"47862","type":"UnionRenderers"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"47043","type":"BoxAnnotation"},{"attributes":{},"id":"47038","type":"ResetTool"},{"attributes":{},"id":"47859","type":"BasicTickFormatter"},{"attributes":{"callback":null,"end":2.4,"start":-0.3},"id":"47016","type":"DataRange1d"},{"attributes":{},"id":"47034","type":"PanTool"},{"attributes":{},"id":"47039","type":"HelpTool"},{"attributes":{},"id":"47035","type":"WheelZoomTool"},{"attributes":{"callback":null,"data":{"descriptions":["Working on the parallelization of a Computer Vision algorithm (Zero Mean Normalized Cross-Correlation), using the NVIDIA CUDA framework on a GPU embedded in a SoC (Tegra K1)","Development of testing programs for Computer Vision software solutions using Python"],"keywords":["R&D Computer Vision","Python"],"x":{"__ndarray__":"+PQw2Sgx8T8a4RbpRZDzPw==","dtype":"float64","shape":[2]},"y":{"__ndarray__":"zOJ1oMKe0j9UWH8+uK3mPw==","dtype":"float64","shape":[2]}},"selected":{"id":"47863","type":"Selection"},"selection_policy":{"id":"47862","type":"UnionRenderers"}},"id":"47014","type":"ColumnDataSource"},{"attributes":{"formatter":{"id":"47859","type":"BasicTickFormatter"},"plot":{"id":"47015","subtype":"Figure","type":"Plot"},"ticker":{"id":"47025","type":"BasicTicker"}},"id":"47024","type":"LinearAxis"},{"attributes":{},"id":"47030","type":"BasicTicker"},{"attributes":{"data_source":{"id":"47014","type":"ColumnDataSource"},"glyph":{"id":"47052","type":"Circle"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"47053","type":"Circle"},"selection_glyph":null,"view":{"id":"47055","type":"CDSView"}},"id":"47054","type":"GlyphRenderer"},{"attributes":{},"id":"47025","type":"BasicTicker"},{"attributes":{"source":{"id":"47014","type":"ColumnDataSource"}},"id":"47055","type":"CDSView"},{"attributes":{},"id":"47857","type":"BasicTickFormatter"},{"attributes":{},"id":"47863","type":"Selection"},{"attributes":{"plot":{"id":"47015","subtype":"Figure","type":"Plot"},"source":{"id":"47014","type":"ColumnDataSource"},"text":{"field":"keywords"},"text_align":"center","text_color":{"value":"#555555"},"text_font_size":{"value":"10pt"},"x":{"field":"x"},"y":{"field":"y"},"y_offset":{"value":-30}},"id":"47056","type":"LabelSet"},{"attributes":{"overlay":{"id":"47043","type":"BoxAnnotation"}},"id":"47036","type":"BoxZoomTool"},{"attributes":{"plot":{"id":"47015","subtype":"Figure","type":"Plot"},"ticker":{"id":"47025","type":"BasicTicker"}},"id":"47028","type":"Grid"}],"root_ids":["47015"]},"title":"Bokeh Application","version":"1.0.2"}};
+  var render_items = [{"docid":"4ecb88d0-acf0-4fb5-b339-4bca4a87fc77","roots":{"47015":"134af2aa-7805-41d4-8e71-4283ba10d59f"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
@@ -12921,7 +12946,7 @@ var element = $('#909e0557-9f59-4d9f-941a-bb7f97bcfde5');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_skills_plot</span><span class="p">(</span><span class="n">x_label</span><span class="p">,</span> <span class="n">skills</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -12982,7 +13007,7 @@ var element = $('#909e0557-9f59-4d9f-941a-bb7f97bcfde5');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[154]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_skills_plot</span><span class="p">(</span><span class="s1">&#39;Programming Languages&#39;</span><span class="p">,</span> <span class="n">job_skills</span><span class="p">[</span><span class="n">job_skills</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;Programming Language&#39;</span><span class="p">])</span>
@@ -13006,7 +13031,7 @@ var element = $('#909e0557-9f59-4d9f-941a-bb7f97bcfde5');
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="1226">Loading BokehJS ...</span>
+        <span id="36124">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -13020,10 +13045,10 @@ var element = $('#909e0557-9f59-4d9f-941a-bb7f97bcfde5');
 
 
 
-<div id="e68fe98b-5369-473d-b451-db53ef92b7bf"></div>
+<div id="ba1bbb36-57d0-452d-9270-49e2aad1514f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e68fe98b-5369-473d-b451-db53ef92b7bf');
+var element = $('#ba1bbb36-57d0-452d-9270-49e2aad1514f');
 
 (function(root) {
   function now() {
@@ -13183,7 +13208,7 @@ var element = $('#e68fe98b-5369-473d-b451-db53ef92b7bf');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("1226");
+    var el = document.getElementById("36124");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -13237,9 +13262,9 @@ var element = $('#e68fe98b-5369-473d-b451-db53ef92b7bf');
       console.log("Bokeh: injecting script tag for BokehJS library: ", url);
       document.getElementsByTagName("head")[0].appendChild(s);
     }
-  };var element = document.getElementById("1226");
+  };var element = document.getElementById("36124");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid '1226' but no matching script tag was found. ")
+    console.log("Bokeh: ERROR: autoload.js configured with elementid '36124' but no matching script tag was found. ")
     return false;
   }
 
@@ -13276,7 +13301,7 @@ var element = $('#e68fe98b-5369-473d-b451-db53ef92b7bf');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("1226")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("36124")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -13310,7 +13335,7 @@ var element = $('#e68fe98b-5369-473d-b451-db53ef92b7bf');
 
 
 
-  <div class="bk-root" id="d2bc8c2d-6641-4024-9027-5e4a8bd2429a"></div>
+  <div class="bk-root" id="aa7bc164-5f35-4989-815b-5e795cfb64a3"></div>
 
 </div>
 
@@ -13324,15 +13349,15 @@ var element = $('#e68fe98b-5369-473d-b451-db53ef92b7bf');
 
 
 
-<div id="e1bc483d-f49e-4629-852e-861a9ac0b931"></div>
+<div id="f331a76e-3c37-4390-af35-fb4b0cb938cf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e1bc483d-f49e-4629-852e-861a9ac0b931');
+var element = $('#f331a76e-3c37-4390-af35-fb4b0cb938cf');
 (function(root) {
   function embed_document(root) {
     
-  var docs_json = {"9cf90aaa-c679-4138-a382-f449c667d558":{"roots":{"references":[{"attributes":{"below":[{"id":"1239","type":"CategoricalAxis"}],"left":[{"id":"1243","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":400,"plot_width":800,"renderers":[{"id":"1239","type":"CategoricalAxis"},{"id":"1242","type":"Grid"},{"id":"1243","type":"LinearAxis"},{"id":"1247","type":"Grid"},{"id":"1256","type":"BoxAnnotation"},{"id":"1267","type":"GlyphRenderer"}],"title":{"id":"1228","type":"Title"},"toolbar":{"id":"1254","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"1231","type":"FactorRange"},"x_scale":{"id":"1235","type":"CategoricalScale"},"y_range":{"id":"1233","type":"DataRange1d"},"y_scale":{"id":"1237","type":"LinearScale"}},"id":"1229","subtype":"Figure","type":"Plot"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1256","type":"BoxAnnotation"},{"attributes":{"fill_color":{"field":"type","transform":{"id":"1263","type":"CategoricalColorMapper"}},"line_color":{"value":"white"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"1265","type":"VBar"},{"attributes":{"callback":null,"end":10,"start":0},"id":"1233","type":"DataRange1d"},{"attributes":{},"id":"1235","type":"CategoricalScale"},{"attributes":{},"id":"1237","type":"LinearScale"},{"attributes":{"axis_label":"Programming Languages","formatter":{"id":"1292","type":"CategoricalTickFormatter"},"major_label_orientation":1.2,"plot":{"id":"1229","subtype":"Figure","type":"Plot"},"ticker":{"id":"1240","type":"CategoricalTicker"}},"id":"1239","type":"CategoricalAxis"},{"attributes":{"source":{"id":"1227","type":"ColumnDataSource"}},"id":"1268","type":"CDSView"},{"attributes":{"data_source":{"id":"1227","type":"ColumnDataSource"},"glyph":{"id":"1265","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1266","type":"VBar"},"selection_glyph":null,"view":{"id":"1268","type":"CDSView"}},"id":"1267","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"1266","type":"VBar"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"1229","subtype":"Figure","type":"Plot"},"ticker":{"id":"1240","type":"CategoricalTicker"}},"id":"1242","type":"Grid"},{"attributes":{},"id":"1240","type":"CategoricalTicker"},{"attributes":{},"id":"1295","type":"UnionRenderers"},{"attributes":{},"id":"1292","type":"CategoricalTickFormatter"},{"attributes":{"plot":null,"text":"Experise level"},"id":"1228","type":"Title"},{"attributes":{},"id":"1244","type":"BasicTicker"},{"attributes":{"formatter":{"id":"1290","type":"BasicTickFormatter"},"plot":{"id":"1229","subtype":"Figure","type":"Plot"},"ticker":{"id":"1244","type":"BasicTicker"}},"id":"1243","type":"LinearAxis"},{"attributes":{},"id":"1296","type":"Selection"},{"attributes":{"callback":null,"tooltips":[["Name","@description"],["Type","@type"],["Details","@tooltip"]]},"id":"1269","type":"HoverTool"},{"attributes":{"overlay":{"id":"1256","type":"BoxAnnotation"}},"id":"1250","type":"BoxZoomTool"},{"attributes":{"callback":null,"data":{"description":["Java","Python","C/C++","R","MATLAB","VHDL","PROLOG"],"index":[0,1,2,3,4,5,6],"level":[9,7,5,4,4,3,3],"tooltip":["Proficient User (4+ years everyday working experience)","Independent User (3+ years experience on personal projects)","Basic User (2 years school experience)","Basic User (1 year experience on personal projects)","Basic User (1 year experience on personal projects)","Basic User (1 year school experience)","Basic User (1 year school experience)"],"type":["Programming Language","Programming Language","Programming Language","Programming Language","Programming Language","Programming Language","Programming Language"]},"selected":{"id":"1296","type":"Selection"},"selection_policy":{"id":"1295","type":"UnionRenderers"}},"id":"1227","type":"ColumnDataSource"},{"attributes":{"dimension":1,"plot":{"id":"1229","subtype":"Figure","type":"Plot"},"ticker":{"id":"1244","type":"BasicTicker"}},"id":"1247","type":"Grid"},{"attributes":{},"id":"1290","type":"BasicTickFormatter"},{"attributes":{"end":1,"factors":["Programming Language"],"palette":["#49006a","#7a0177","#ae017e","#dd3497","#f768a1","#fa9fb5","#fcc5c0","#fde0dd","#fff7f3"]},"id":"1263","type":"CategoricalColorMapper"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1248","type":"PanTool"},{"id":"1249","type":"WheelZoomTool"},{"id":"1250","type":"BoxZoomTool"},{"id":"1251","type":"SaveTool"},{"id":"1252","type":"ResetTool"},{"id":"1253","type":"HelpTool"},{"id":"1269","type":"HoverTool"}]},"id":"1254","type":"Toolbar"},{"attributes":{},"id":"1248","type":"PanTool"},{"attributes":{},"id":"1249","type":"WheelZoomTool"},{"attributes":{},"id":"1251","type":"SaveTool"},{"attributes":{"callback":null,"factors":["Java","Python","C/C++","R","MATLAB","VHDL","PROLOG"],"range_padding":0.1},"id":"1231","type":"FactorRange"},{"attributes":{},"id":"1252","type":"ResetTool"},{"attributes":{},"id":"1253","type":"HelpTool"}],"root_ids":["1229"]},"title":"Bokeh Application","version":"1.0.2"}};
-  var render_items = [{"docid":"9cf90aaa-c679-4138-a382-f449c667d558","roots":{"1229":"d2bc8c2d-6641-4024-9027-5e4a8bd2429a"}}];
+  var docs_json = {"e6d66ad7-c6d3-4e0f-99e4-f3291e89b94d":{"roots":{"references":[{"attributes":{"below":[{"id":"36137","type":"CategoricalAxis"}],"left":[{"id":"36141","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":400,"plot_width":800,"renderers":[{"id":"36137","type":"CategoricalAxis"},{"id":"36140","type":"Grid"},{"id":"36141","type":"LinearAxis"},{"id":"36145","type":"Grid"},{"id":"36154","type":"BoxAnnotation"},{"id":"36165","type":"GlyphRenderer"}],"title":{"id":"36126","type":"Title"},"toolbar":{"id":"36152","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"36129","type":"FactorRange"},"x_scale":{"id":"36133","type":"CategoricalScale"},"y_range":{"id":"36131","type":"DataRange1d"},"y_scale":{"id":"36135","type":"LinearScale"}},"id":"36127","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"36135","type":"LinearScale"},{"attributes":{},"id":"36149","type":"SaveTool"},{"attributes":{},"id":"36150","type":"ResetTool"},{"attributes":{"axis_label":"Programming Languages","formatter":{"id":"36870","type":"CategoricalTickFormatter"},"major_label_orientation":1.2,"plot":{"id":"36127","subtype":"Figure","type":"Plot"},"ticker":{"id":"36138","type":"CategoricalTicker"}},"id":"36137","type":"CategoricalAxis"},{"attributes":{},"id":"36151","type":"HelpTool"},{"attributes":{},"id":"36138","type":"CategoricalTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"36146","type":"PanTool"},{"id":"36147","type":"WheelZoomTool"},{"id":"36148","type":"BoxZoomTool"},{"id":"36149","type":"SaveTool"},{"id":"36150","type":"ResetTool"},{"id":"36151","type":"HelpTool"},{"id":"36167","type":"HoverTool"}]},"id":"36152","type":"Toolbar"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"36154","type":"BoxAnnotation"},{"attributes":{"end":1,"factors":["Programming Language"],"palette":["#49006a","#7a0177","#ae017e","#dd3497","#f768a1","#fa9fb5","#fcc5c0","#fde0dd","#fff7f3"]},"id":"36161","type":"CategoricalColorMapper"},{"attributes":{},"id":"36147","type":"WheelZoomTool"},{"attributes":{"data_source":{"id":"36125","type":"ColumnDataSource"},"glyph":{"id":"36163","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"36164","type":"VBar"},"selection_glyph":null,"view":{"id":"36166","type":"CDSView"}},"id":"36165","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"36164","type":"VBar"},{"attributes":{"source":{"id":"36125","type":"ColumnDataSource"}},"id":"36166","type":"CDSView"},{"attributes":{"dimension":1,"plot":{"id":"36127","subtype":"Figure","type":"Plot"},"ticker":{"id":"36142","type":"BasicTicker"}},"id":"36145","type":"Grid"},{"attributes":{"callback":null,"tooltips":[["Name","@description"],["Type","@type"],["Details","@tooltip"]]},"id":"36167","type":"HoverTool"},{"attributes":{"formatter":{"id":"36868","type":"BasicTickFormatter"},"plot":{"id":"36127","subtype":"Figure","type":"Plot"},"ticker":{"id":"36142","type":"BasicTicker"}},"id":"36141","type":"LinearAxis"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"36127","subtype":"Figure","type":"Plot"},"ticker":{"id":"36138","type":"CategoricalTicker"}},"id":"36140","type":"Grid"},{"attributes":{"overlay":{"id":"36154","type":"BoxAnnotation"}},"id":"36148","type":"BoxZoomTool"},{"attributes":{},"id":"36868","type":"BasicTickFormatter"},{"attributes":{"callback":null,"factors":["Java","Python","C/C++","R","MATLAB","VHDL","PROLOG"],"range_padding":0.1},"id":"36129","type":"FactorRange"},{"attributes":{},"id":"36873","type":"UnionRenderers"},{"attributes":{},"id":"36870","type":"CategoricalTickFormatter"},{"attributes":{},"id":"36146","type":"PanTool"},{"attributes":{"fill_color":{"field":"type","transform":{"id":"36161","type":"CategoricalColorMapper"}},"line_color":{"value":"white"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"36163","type":"VBar"},{"attributes":{"plot":null,"text":"Experise level"},"id":"36126","type":"Title"},{"attributes":{},"id":"36874","type":"Selection"},{"attributes":{"callback":null,"end":10,"start":0},"id":"36131","type":"DataRange1d"},{"attributes":{},"id":"36142","type":"BasicTicker"},{"attributes":{"callback":null,"data":{"description":["Java","Python","C/C++","R","MATLAB","VHDL","PROLOG"],"index":[0,1,2,3,4,5,6],"level":[9,7,5,4,4,3,3],"tooltip":["Proficient User (4+ years everyday working experience)","Independent User (3+ years experience on personal projects)","Basic User (2 years school experience)","Basic User (1 year experience on personal projects)","Basic User (1 year experience on personal projects)","Basic User (1 year school experience)","Basic User (1 year school experience)"],"type":["Programming Language","Programming Language","Programming Language","Programming Language","Programming Language","Programming Language","Programming Language"]},"selected":{"id":"36874","type":"Selection"},"selection_policy":{"id":"36873","type":"UnionRenderers"}},"id":"36125","type":"ColumnDataSource"},{"attributes":{},"id":"36133","type":"CategoricalScale"}],"root_ids":["36127"]},"title":"Bokeh Application","version":"1.0.2"}};
+  var render_items = [{"docid":"e6d66ad7-c6d3-4e0f-99e4-f3291e89b94d","roots":{"36127":"aa7bc164-5f35-4989-815b-5e795cfb64a3"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
@@ -13373,7 +13398,7 @@ var element = $('#e1bc483d-f49e-4629-852e-861a9ac0b931');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">show_skills_plot</span><span class="p">(</span><span class="s1">&#39;Skills grouped by type&#39;</span><span class="p">,</span> <span class="n">job_skills</span><span class="p">[</span><span class="n">job_skills</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="s1">&#39;Programming Language&#39;</span><span class="p">])</span>
@@ -13397,7 +13422,7 @@ var element = $('#e1bc483d-f49e-4629-852e-861a9ac0b931');
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="1345">Loading BokehJS ...</span>
+        <span id="36923">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -13411,10 +13436,10 @@ var element = $('#e1bc483d-f49e-4629-852e-861a9ac0b931');
 
 
 
-<div id="2e3a374e-cee5-4cf8-9883-c86ad88dac91"></div>
+<div id="5b498a06-5c37-42a7-8851-f51020e46e3d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2e3a374e-cee5-4cf8-9883-c86ad88dac91');
+var element = $('#5b498a06-5c37-42a7-8851-f51020e46e3d');
 
 (function(root) {
   function now() {
@@ -13574,7 +13599,7 @@ var element = $('#2e3a374e-cee5-4cf8-9883-c86ad88dac91');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("1345");
+    var el = document.getElementById("36923");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -13628,9 +13653,9 @@ var element = $('#2e3a374e-cee5-4cf8-9883-c86ad88dac91');
       console.log("Bokeh: injecting script tag for BokehJS library: ", url);
       document.getElementsByTagName("head")[0].appendChild(s);
     }
-  };var element = document.getElementById("1345");
+  };var element = document.getElementById("36923");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid '1345' but no matching script tag was found. ")
+    console.log("Bokeh: ERROR: autoload.js configured with elementid '36923' but no matching script tag was found. ")
     return false;
   }
 
@@ -13667,7 +13692,7 @@ var element = $('#2e3a374e-cee5-4cf8-9883-c86ad88dac91');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("1345")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("36923")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -13701,7 +13726,7 @@ var element = $('#2e3a374e-cee5-4cf8-9883-c86ad88dac91');
 
 
 
-  <div class="bk-root" id="e9f5196f-3f39-46e6-8bb9-0cc0b34c9de1"></div>
+  <div class="bk-root" id="3b2c426c-2513-402f-ac9f-8b79117c20ec"></div>
 
 </div>
 
@@ -13715,15 +13740,15 @@ var element = $('#2e3a374e-cee5-4cf8-9883-c86ad88dac91');
 
 
 
-<div id="fe2b36b8-05c0-476d-9e7f-df6268161482"></div>
+<div id="c11a3f5d-bd34-4c25-8ec9-bfabf686cb70"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fe2b36b8-05c0-476d-9e7f-df6268161482');
+var element = $('#c11a3f5d-bd34-4c25-8ec9-bfabf686cb70');
 (function(root) {
   function embed_document(root) {
     
-  var docs_json = {"7e8e7f24-75b4-481b-9b91-bf06c89606d8":{"roots":{"references":[{"attributes":{"below":[{"id":"1358","type":"CategoricalAxis"}],"left":[{"id":"1362","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":400,"plot_width":800,"renderers":[{"id":"1358","type":"CategoricalAxis"},{"id":"1361","type":"Grid"},{"id":"1362","type":"LinearAxis"},{"id":"1366","type":"Grid"},{"id":"1375","type":"BoxAnnotation"},{"id":"1386","type":"GlyphRenderer"}],"title":{"id":"1347","type":"Title"},"toolbar":{"id":"1373","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"1350","type":"FactorRange"},"x_scale":{"id":"1354","type":"CategoricalScale"},"y_range":{"id":"1352","type":"DataRange1d"},"y_scale":{"id":"1356","type":"LinearScale"}},"id":"1348","subtype":"Figure","type":"Plot"},{"attributes":{"dimension":1,"plot":{"id":"1348","subtype":"Figure","type":"Plot"},"ticker":{"id":"1363","type":"BasicTicker"}},"id":"1366","type":"Grid"},{"attributes":{"plot":null,"text":"Experise level"},"id":"1347","type":"Title"},{"attributes":{},"id":"1417","type":"BasicTickFormatter"},{"attributes":{"callback":null,"tooltips":[["Name","@description"],["Type","@type"],["Details","@tooltip"]]},"id":"1388","type":"HoverTool"},{"attributes":{},"id":"1423","type":"Selection"},{"attributes":{},"id":"1419","type":"CategoricalTickFormatter"},{"attributes":{"callback":null,"factors":["IntelliJ","Eclipse","Jupyter","Hue","Visual Studio","Zeppelin","Tomcat","Amazon AWS","Google GCP","WordPress","Zookeeper","HDFS","HBase","Solr","Hive","Impala","Sqoop","Ambari","Nifi","Design Patterns","JMS","ActiveMQ","Hibernate","Git","SVN","Kanban"],"range_padding":0.1},"id":"1350","type":"FactorRange"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"1348","subtype":"Figure","type":"Plot"},"ticker":{"id":"1359","type":"CategoricalTicker"}},"id":"1361","type":"Grid"},{"attributes":{"source":{"id":"1346","type":"ColumnDataSource"}},"id":"1387","type":"CDSView"},{"attributes":{"callback":null,"data":{"description":["IntelliJ","Eclipse","Jupyter","Hue","Visual Studio","Zeppelin","Tomcat","Amazon AWS","Google GCP","WordPress","Zookeeper","HDFS","HBase","Solr","Hive","Impala","Sqoop","Ambari","Nifi","Design Patterns","JMS","ActiveMQ","Hibernate","Git","SVN","Kanban"],"index":[7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32],"level":[8,8,7,7,5,3,8,7,4,6,8,8,8,8,7,7,6,6,4,8,6,6,4,8,7,8],"tooltip":["Proficient User (2+ years everyday working experience)","Proficient User (2+ years everyday working experience)","Independent User (2+ years experience on personal projects)","Independent User (3+ years everyday working experience)","Basic User (2 years school experience)","Basic User (1 years experience on personal projects)","(4+ years everyday working experience)","Independent User (3+ years everyday working experience)","Basic User (6 months experience on personal projects)","Basic User (2 years experience on personal projects)","Proficient User (4+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Independent User (2+ years everyday working experience)","Independent User (2+ years everyday working experience)","Independent User (1+ years everyday working experience)","Independent User (1+ years everyday working experience)","Basic User (1+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Independent User (3+ years everyday working experience)","Independent User (3+ years everyday working experience)","Basic User (1 year experience on personal projects)","Proficient User (3+ years everyday working experience)","Proficient User (2 years everyday working experience)","Proficient User (3+ years everyday working experience)"],"type":["IDE","IDE","IDE","IDE","IDE","IDE","Application Server","Cloud Computing","Cloud Computing","WordPress","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Java","Java","Java","Java","Versioning Control","Versioning Control","Agile"]},"selected":{"id":"1423","type":"Selection"},"selection_policy":{"id":"1422","type":"UnionRenderers"}},"id":"1346","type":"ColumnDataSource"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1367","type":"PanTool"},{"id":"1368","type":"WheelZoomTool"},{"id":"1369","type":"BoxZoomTool"},{"id":"1370","type":"SaveTool"},{"id":"1371","type":"ResetTool"},{"id":"1372","type":"HelpTool"},{"id":"1388","type":"HoverTool"}]},"id":"1373","type":"Toolbar"},{"attributes":{"end":1,"factors":["Agile","Application Server","Cloud Computing","Hadoop","IDE","Java","Versioning Control","WordPress"],"palette":["#49006a","#7a0177","#ae017e","#dd3497","#f768a1","#fa9fb5","#fcc5c0","#fde0dd","#fff7f3"]},"id":"1382","type":"CategoricalColorMapper"},{"attributes":{},"id":"1359","type":"CategoricalTicker"},{"attributes":{},"id":"1422","type":"UnionRenderers"},{"attributes":{"data_source":{"id":"1346","type":"ColumnDataSource"},"glyph":{"id":"1384","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1385","type":"VBar"},"selection_glyph":null,"view":{"id":"1387","type":"CDSView"}},"id":"1386","type":"GlyphRenderer"},{"attributes":{},"id":"1371","type":"ResetTool"},{"attributes":{},"id":"1372","type":"HelpTool"},{"attributes":{},"id":"1363","type":"BasicTicker"},{"attributes":{"formatter":{"id":"1417","type":"BasicTickFormatter"},"plot":{"id":"1348","subtype":"Figure","type":"Plot"},"ticker":{"id":"1363","type":"BasicTicker"}},"id":"1362","type":"LinearAxis"},{"attributes":{"axis_label":"Skills grouped by type","formatter":{"id":"1419","type":"CategoricalTickFormatter"},"major_label_orientation":1.2,"plot":{"id":"1348","subtype":"Figure","type":"Plot"},"ticker":{"id":"1359","type":"CategoricalTicker"}},"id":"1358","type":"CategoricalAxis"},{"attributes":{},"id":"1367","type":"PanTool"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"1385","type":"VBar"},{"attributes":{},"id":"1370","type":"SaveTool"},{"attributes":{"callback":null,"end":10,"start":0},"id":"1352","type":"DataRange1d"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1375","type":"BoxAnnotation"},{"attributes":{"overlay":{"id":"1375","type":"BoxAnnotation"}},"id":"1369","type":"BoxZoomTool"},{"attributes":{},"id":"1368","type":"WheelZoomTool"},{"attributes":{},"id":"1354","type":"CategoricalScale"},{"attributes":{},"id":"1356","type":"LinearScale"},{"attributes":{"fill_color":{"field":"type","transform":{"id":"1382","type":"CategoricalColorMapper"}},"line_color":{"value":"white"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"1384","type":"VBar"}],"root_ids":["1348"]},"title":"Bokeh Application","version":"1.0.2"}};
-  var render_items = [{"docid":"7e8e7f24-75b4-481b-9b91-bf06c89606d8","roots":{"1348":"e9f5196f-3f39-46e6-8bb9-0cc0b34c9de1"}}];
+  var docs_json = {"63c6b167-8778-4d7b-a58c-ebf793695f9e":{"roots":{"references":[{"attributes":{"below":[{"id":"36936","type":"CategoricalAxis"}],"left":[{"id":"36940","type":"LinearAxis"}],"outline_line_color":{"value":null},"plot_height":400,"plot_width":800,"renderers":[{"id":"36936","type":"CategoricalAxis"},{"id":"36939","type":"Grid"},{"id":"36940","type":"LinearAxis"},{"id":"36944","type":"Grid"},{"id":"36953","type":"BoxAnnotation"},{"id":"36964","type":"GlyphRenderer"}],"title":{"id":"36925","type":"Title"},"toolbar":{"id":"36951","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"36928","type":"FactorRange"},"x_scale":{"id":"36932","type":"CategoricalScale"},"y_range":{"id":"36930","type":"DataRange1d"},"y_scale":{"id":"36934","type":"LinearScale"}},"id":"36926","subtype":"Figure","type":"Plot"},{"attributes":{"data_source":{"id":"36924","type":"ColumnDataSource"},"glyph":{"id":"36962","type":"VBar"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"36963","type":"VBar"},"selection_glyph":null,"view":{"id":"36965","type":"CDSView"}},"id":"36964","type":"GlyphRenderer"},{"attributes":{},"id":"36945","type":"PanTool"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"36945","type":"PanTool"},{"id":"36946","type":"WheelZoomTool"},{"id":"36947","type":"BoxZoomTool"},{"id":"36948","type":"SaveTool"},{"id":"36949","type":"ResetTool"},{"id":"36950","type":"HelpTool"},{"id":"36966","type":"HoverTool"}]},"id":"36951","type":"Toolbar"},{"attributes":{"end":1,"factors":["Agile","Application Server","Cloud Computing","Hadoop","IDE","Java","Versioning Control","WordPress"],"palette":["#49006a","#7a0177","#ae017e","#dd3497","#f768a1","#fa9fb5","#fcc5c0","#fde0dd","#fff7f3"]},"id":"36960","type":"CategoricalColorMapper"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"36926","subtype":"Figure","type":"Plot"},"ticker":{"id":"36937","type":"CategoricalTicker"}},"id":"36939","type":"Grid"},{"attributes":{"overlay":{"id":"36953","type":"BoxAnnotation"}},"id":"36947","type":"BoxZoomTool"},{"attributes":{"formatter":{"id":"37675","type":"BasicTickFormatter"},"plot":{"id":"36926","subtype":"Figure","type":"Plot"},"ticker":{"id":"36941","type":"BasicTicker"}},"id":"36940","type":"LinearAxis"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"36963","type":"VBar"},{"attributes":{},"id":"36941","type":"BasicTicker"},{"attributes":{},"id":"36949","type":"ResetTool"},{"attributes":{"callback":null,"data":{"description":["IntelliJ","Eclipse","Jupyter","Hue","Visual Studio","Zeppelin","Tomcat","Amazon AWS","Google GCP","WordPress","Zookeeper","HDFS","HBase","Solr","Hive","Impala","Sqoop","Ambari","Nifi","Design Patterns","JMS","ActiveMQ","Hibernate","Git","SVN","Kanban"],"index":[7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32],"level":[8,8,7,7,5,3,8,7,4,6,8,8,8,8,7,7,6,6,4,8,6,6,4,8,7,8],"tooltip":["Proficient User (2+ years everyday working experience)","Proficient User (2+ years everyday working experience)","Independent User (2+ years experience on personal projects)","Independent User (3+ years everyday working experience)","Basic User (2 years school experience)","Basic User (1 years experience on personal projects)","(4+ years everyday working experience)","Independent User (3+ years everyday working experience)","Basic User (6 months experience on personal projects)","Basic User (2 years experience on personal projects)","Proficient User (4+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Independent User (2+ years everyday working experience)","Independent User (2+ years everyday working experience)","Independent User (1+ years everyday working experience)","Independent User (1+ years everyday working experience)","Basic User (1+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Independent User (3+ years everyday working experience)","Independent User (3+ years everyday working experience)","Basic User (1 year experience on personal projects)","Proficient User (3+ years everyday working experience)","Proficient User (2 years everyday working experience)","Proficient User (3+ years everyday working experience)"],"type":["IDE","IDE","IDE","IDE","IDE","IDE","Application Server","Cloud Computing","Cloud Computing","WordPress","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Hadoop","Java","Java","Java","Java","Versioning Control","Versioning Control","Agile"]},"selected":{"id":"37681","type":"Selection"},"selection_policy":{"id":"37680","type":"UnionRenderers"}},"id":"36924","type":"ColumnDataSource"},{"attributes":{},"id":"36950","type":"HelpTool"},{"attributes":{},"id":"36937","type":"CategoricalTicker"},{"attributes":{"axis_label":"Skills grouped by type","formatter":{"id":"37677","type":"CategoricalTickFormatter"},"major_label_orientation":1.2,"plot":{"id":"36926","subtype":"Figure","type":"Plot"},"ticker":{"id":"36937","type":"CategoricalTicker"}},"id":"36936","type":"CategoricalAxis"},{"attributes":{"fill_color":{"field":"type","transform":{"id":"36960","type":"CategoricalColorMapper"}},"line_color":{"value":"white"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"36962","type":"VBar"},{"attributes":{},"id":"36934","type":"LinearScale"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"plot":null,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"36953","type":"BoxAnnotation"},{"attributes":{},"id":"36932","type":"CategoricalScale"},{"attributes":{"callback":null,"end":10,"start":0},"id":"36930","type":"DataRange1d"},{"attributes":{},"id":"36948","type":"SaveTool"},{"attributes":{"plot":null,"text":"Experise level"},"id":"36925","type":"Title"},{"attributes":{},"id":"37680","type":"UnionRenderers"},{"attributes":{},"id":"37675","type":"BasicTickFormatter"},{"attributes":{"callback":null,"factors":["IntelliJ","Eclipse","Jupyter","Hue","Visual Studio","Zeppelin","Tomcat","Amazon AWS","Google GCP","WordPress","Zookeeper","HDFS","HBase","Solr","Hive","Impala","Sqoop","Ambari","Nifi","Design Patterns","JMS","ActiveMQ","Hibernate","Git","SVN","Kanban"],"range_padding":0.1},"id":"36928","type":"FactorRange"},{"attributes":{"callback":null,"tooltips":[["Name","@description"],["Type","@type"],["Details","@tooltip"]]},"id":"36966","type":"HoverTool"},{"attributes":{"dimension":1,"plot":{"id":"36926","subtype":"Figure","type":"Plot"},"ticker":{"id":"36941","type":"BasicTicker"}},"id":"36944","type":"Grid"},{"attributes":{"source":{"id":"36924","type":"ColumnDataSource"}},"id":"36965","type":"CDSView"},{"attributes":{},"id":"36946","type":"WheelZoomTool"},{"attributes":{},"id":"37677","type":"CategoricalTickFormatter"},{"attributes":{},"id":"37681","type":"Selection"}],"root_ids":["36926"]},"title":"Bokeh Application","version":"1.0.2"}};
+  var render_items = [{"docid":"63c6b167-8778-4d7b-a58c-ebf793695f9e","roots":{"36926":"3b2c426c-2513-402f-ac9f-8b79117c20ec"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
@@ -13803,7 +13828,7 @@ Tokyo, November 2013</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[156]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM books order by status desc, author asc&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
@@ -13819,7 +13844,7 @@ Tokyo, November 2013</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+<div class="prompt output_prompt">Out[156]:</div>
 
 
 
@@ -13918,7 +13943,7 @@ Tokyo, November 2013</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[181]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="k">import</span> <span class="n">pi</span>
@@ -13926,7 +13951,7 @@ Tokyo, November 2013</p>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">bokeh.io</span> <span class="k">import</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">show</span>
-<span class="kn">from</span> <span class="nn">bokeh.palettes</span> <span class="k">import</span> <span class="n">Category20</span>
+<span class="kn">from</span> <span class="nn">bokeh.palettes</span> <span class="k">import</span> <span class="n">Purples8</span>
 <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="k">import</span> <span class="n">figure</span>
 <span class="kn">from</span> <span class="nn">bokeh.transform</span> <span class="k">import</span> <span class="n">cumsum</span>
 
@@ -13942,7 +13967,7 @@ Tokyo, November 2013</p>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;index&#39;</span><span class="p">:</span><span class="s1">&#39;country&#39;</span><span class="p">})</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;angle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Category20</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Purples8</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">plot_height</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Pie Chart&quot;</span><span class="p">,</span> <span class="n">toolbar_location</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
            <span class="n">tools</span><span class="o">=</span><span class="s2">&quot;hover&quot;</span><span class="p">,</span> <span class="n">tooltips</span><span class="o">=</span><span class="s2">&quot;@country: @value%&quot;</span><span class="p">,</span> <span class="n">x_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
@@ -13976,7 +14001,7 @@ Tokyo, November 2013</p>
 
     <div class="bk-root">
         <a href="https://bokeh.pydata.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
-        <span id="1472">Loading BokehJS ...</span>
+        <span id="43500">Loading BokehJS ...</span>
     </div>
 </div>
 
@@ -13990,10 +14015,10 @@ Tokyo, November 2013</p>
 
 
 
-<div id="17a99142-16a2-4a05-90a0-6da1c2a30cb4"></div>
+<div id="86e5523a-09e7-422b-b436-f838342a6bcb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#17a99142-16a2-4a05-90a0-6da1c2a30cb4');
+var element = $('#86e5523a-09e7-422b-b436-f838342a6bcb');
 
 (function(root) {
   function now() {
@@ -14153,7 +14178,7 @@ var element = $('#17a99142-16a2-4a05-90a0-6da1c2a30cb4');
      "</div>"}};
 
   function display_loaded() {
-    var el = document.getElementById("1472");
+    var el = document.getElementById("43500");
     if (el != null) {
       el.textContent = "BokehJS is loading...";
     }
@@ -14207,9 +14232,9 @@ var element = $('#17a99142-16a2-4a05-90a0-6da1c2a30cb4');
       console.log("Bokeh: injecting script tag for BokehJS library: ", url);
       document.getElementsByTagName("head")[0].appendChild(s);
     }
-  };var element = document.getElementById("1472");
+  };var element = document.getElementById("43500");
   if (element == null) {
-    console.log("Bokeh: ERROR: autoload.js configured with elementid '1472' but no matching script tag was found. ")
+    console.log("Bokeh: ERROR: autoload.js configured with elementid '43500' but no matching script tag was found. ")
     return false;
   }
 
@@ -14246,7 +14271,7 @@ var element = $('#17a99142-16a2-4a05-90a0-6da1c2a30cb4');
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      var cell = $(document.getElementById("1472")).parents('.cell').data().cell;
+      var cell = $(document.getElementById("43500")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
 
@@ -14280,7 +14305,7 @@ var element = $('#17a99142-16a2-4a05-90a0-6da1c2a30cb4');
 
 
 
-  <div class="bk-root" id="6ff89010-2e87-4f0a-974f-e671d5c13e49"></div>
+  <div class="bk-root" id="bddef866-9fc0-4499-b102-17e230e0dfba"></div>
 
 </div>
 
@@ -14294,15 +14319,15 @@ var element = $('#17a99142-16a2-4a05-90a0-6da1c2a30cb4');
 
 
 
-<div id="aef01d20-037b-478b-bc48-ff1b49fa6a90"></div>
+<div id="66c15e97-73bf-4061-abd3-060cc82e25d6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#aef01d20-037b-478b-bc48-ff1b49fa6a90');
+var element = $('#66c15e97-73bf-4061-abd3-060cc82e25d6');
 (function(root) {
   function embed_document(root) {
     
-  var docs_json = {"55d1a144-80ee-4115-880f-84c7425cc6b8":{"roots":{"references":[{"attributes":{"below":[{"id":"1484","type":"LinearAxis"}],"left":[{"id":"1489","type":"LinearAxis"}],"plot_height":350,"renderers":[{"id":"1484","type":"LinearAxis"},{"id":"1488","type":"Grid"},{"id":"1489","type":"LinearAxis"},{"id":"1493","type":"Grid"},{"id":"1510","type":"Legend"},{"id":"1503","type":"GlyphRenderer"}],"title":{"id":"1473","type":"Title"},"toolbar":{"id":"1495","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"1476","type":"Range1d"},"x_scale":{"id":"1480","type":"LinearScale"},"y_range":{"id":"1478","type":"DataRange1d"},"y_scale":{"id":"1482","type":"LinearScale"}},"id":"1474","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1551","type":"UnionRenderers"},{"attributes":{"label":{"field":"country"},"renderers":[{"id":"1503","type":"GlyphRenderer"}]},"id":"1511","type":"LegendItem"},{"attributes":{},"id":"1552","type":"Selection"},{"attributes":{},"id":"1485","type":"BasicTicker"},{"attributes":{},"id":"1490","type":"BasicTicker"},{"attributes":{"dimension":1,"grid_line_color":{"value":null},"plot":{"id":"1474","subtype":"Figure","type":"Plot"},"ticker":{"id":"1490","type":"BasicTicker"}},"id":"1493","type":"Grid"},{"attributes":{"callback":null},"id":"1478","type":"DataRange1d"},{"attributes":{"callback":null,"data":{"angle":{"__ndarray__":"GC1EVPsh2T8/0DjGpvH0P4TbSZslOvs/ZXMtOFLB4D/SITN/fNkCQA==","dtype":"float64","shape":[5]},"color":["#1f77b4","#aec7e8","#ff7f0e","#ffbb78","#2ca02c"],"country":["Gym","Other","Sleep","Study","Work"],"index":[0,1,2,3,4],"value":{"__ndarray__":"AAAAAAAAsD+rqqqqqqrKP1VVVVVVVdE/VVVVVVVVtT8AAAAAAADYPw==","dtype":"float64","shape":[5]}},"selected":{"id":"1552","type":"Selection"},"selection_policy":{"id":"1551","type":"UnionRenderers"}},"id":"1499","type":"ColumnDataSource"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1494","type":"HoverTool"}]},"id":"1495","type":"Toolbar"},{"attributes":{},"id":"1480","type":"LinearScale"},{"attributes":{"data_source":{"id":"1499","type":"ColumnDataSource"},"glyph":{"id":"1501","type":"Wedge"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1502","type":"Wedge"},"selection_glyph":null,"view":{"id":"1504","type":"CDSView"}},"id":"1503","type":"GlyphRenderer"},{"attributes":{},"id":"1482","type":"LinearScale"},{"attributes":{"axis_label":null,"formatter":{"id":"1506","type":"BasicTickFormatter"},"plot":{"id":"1474","subtype":"Figure","type":"Plot"},"ticker":{"id":"1490","type":"BasicTicker"},"visible":false},"id":"1489","type":"LinearAxis"},{"attributes":{"end_angle":{"expr":{"id":"1498","type":"CumSum"},"units":"rad"},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"radius":{"units":"data","value":0.4},"start_angle":{"expr":{"id":"1497","type":"CumSum"},"units":"rad"},"x":{"value":0},"y":{"value":1}},"id":"1502","type":"Wedge"},{"attributes":{"end_angle":{"expr":{"id":"1498","type":"CumSum"},"units":"rad"},"fill_color":{"field":"color"},"line_color":{"value":"white"},"radius":{"units":"data","value":0.4},"start_angle":{"expr":{"id":"1497","type":"CumSum"},"units":"rad"},"x":{"value":0},"y":{"value":1}},"id":"1501","type":"Wedge"},{"attributes":{"field":"angle"},"id":"1498","type":"CumSum"},{"attributes":{"field":"angle","include_zero":true},"id":"1497","type":"CumSum"},{"attributes":{"callback":null,"tooltips":"@country: @value%"},"id":"1494","type":"HoverTool"},{"attributes":{"plot":null,"text":"Pie Chart"},"id":"1473","type":"Title"},{"attributes":{"source":{"id":"1499","type":"ColumnDataSource"}},"id":"1504","type":"CDSView"},{"attributes":{"callback":null,"start":-0.5},"id":"1476","type":"Range1d"},{"attributes":{"axis_label":null,"formatter":{"id":"1508","type":"BasicTickFormatter"},"plot":{"id":"1474","subtype":"Figure","type":"Plot"},"ticker":{"id":"1485","type":"BasicTicker"},"visible":false},"id":"1484","type":"LinearAxis"},{"attributes":{},"id":"1506","type":"BasicTickFormatter"},{"attributes":{},"id":"1508","type":"BasicTickFormatter"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"1474","subtype":"Figure","type":"Plot"},"ticker":{"id":"1485","type":"BasicTicker"}},"id":"1488","type":"Grid"},{"attributes":{"items":[{"id":"1511","type":"LegendItem"}],"plot":{"id":"1474","subtype":"Figure","type":"Plot"}},"id":"1510","type":"Legend"}],"root_ids":["1474"]},"title":"Bokeh Application","version":"1.0.2"}};
-  var render_items = [{"docid":"55d1a144-80ee-4115-880f-84c7425cc6b8","roots":{"1474":"6ff89010-2e87-4f0a-974f-e671d5c13e49"}}];
+  var docs_json = {"166eebdd-1e51-4c1f-952e-4a7bdf220d7c":{"roots":{"references":[{"attributes":{"below":[{"id":"43512","type":"LinearAxis"}],"left":[{"id":"43517","type":"LinearAxis"}],"plot_height":350,"renderers":[{"id":"43512","type":"LinearAxis"},{"id":"43516","type":"Grid"},{"id":"43517","type":"LinearAxis"},{"id":"43521","type":"Grid"},{"id":"43538","type":"Legend"},{"id":"43531","type":"GlyphRenderer"}],"title":{"id":"43501","type":"Title"},"toolbar":{"id":"43523","type":"Toolbar"},"toolbar_location":null,"x_range":{"id":"43504","type":"Range1d"},"x_scale":{"id":"43508","type":"LinearScale"},"y_range":{"id":"43506","type":"DataRange1d"},"y_scale":{"id":"43510","type":"LinearScale"}},"id":"43502","subtype":"Figure","type":"Plot"},{"attributes":{"data_source":{"id":"43527","type":"ColumnDataSource"},"glyph":{"id":"43529","type":"Wedge"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"43530","type":"Wedge"},"selection_glyph":null,"view":{"id":"43532","type":"CDSView"}},"id":"43531","type":"GlyphRenderer"},{"attributes":{},"id":"44308","type":"UnionRenderers"},{"attributes":{"callback":null,"start":-0.5},"id":"43504","type":"Range1d"},{"attributes":{"end_angle":{"expr":{"id":"43526","type":"CumSum"},"units":"rad"},"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"radius":{"units":"data","value":0.4},"start_angle":{"expr":{"id":"43525","type":"CumSum"},"units":"rad"},"x":{"value":0},"y":{"value":1}},"id":"43530","type":"Wedge"},{"attributes":{"callback":null},"id":"43506","type":"DataRange1d"},{"attributes":{"end_angle":{"expr":{"id":"43526","type":"CumSum"},"units":"rad"},"fill_color":{"field":"color"},"line_color":{"value":"white"},"radius":{"units":"data","value":0.4},"start_angle":{"expr":{"id":"43525","type":"CumSum"},"units":"rad"},"x":{"value":0},"y":{"value":1}},"id":"43529","type":"Wedge"},{"attributes":{"plot":null,"text":"Pie Chart"},"id":"43501","type":"Title"},{"attributes":{},"id":"43508","type":"LinearScale"},{"attributes":{"source":{"id":"43527","type":"ColumnDataSource"}},"id":"43532","type":"CDSView"},{"attributes":{},"id":"43510","type":"LinearScale"},{"attributes":{"field":"angle","include_zero":true},"id":"43525","type":"CumSum"},{"attributes":{},"id":"43534","type":"BasicTickFormatter"},{"attributes":{"axis_label":null,"formatter":{"id":"43536","type":"BasicTickFormatter"},"plot":{"id":"43502","subtype":"Figure","type":"Plot"},"ticker":{"id":"43513","type":"BasicTicker"},"visible":false},"id":"43512","type":"LinearAxis"},{"attributes":{},"id":"43536","type":"BasicTickFormatter"},{"attributes":{},"id":"43513","type":"BasicTicker"},{"attributes":{},"id":"44309","type":"Selection"},{"attributes":{"grid_line_color":{"value":null},"plot":{"id":"43502","subtype":"Figure","type":"Plot"},"ticker":{"id":"43513","type":"BasicTicker"}},"id":"43516","type":"Grid"},{"attributes":{"axis_label":null,"formatter":{"id":"43534","type":"BasicTickFormatter"},"plot":{"id":"43502","subtype":"Figure","type":"Plot"},"ticker":{"id":"43518","type":"BasicTicker"},"visible":false},"id":"43517","type":"LinearAxis"},{"attributes":{},"id":"43518","type":"BasicTicker"},{"attributes":{"dimension":1,"grid_line_color":{"value":null},"plot":{"id":"43502","subtype":"Figure","type":"Plot"},"ticker":{"id":"43518","type":"BasicTicker"}},"id":"43521","type":"Grid"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"43522","type":"HoverTool"}]},"id":"43523","type":"Toolbar"},{"attributes":{"callback":null,"tooltips":"@country: @value%"},"id":"43522","type":"HoverTool"},{"attributes":{"items":[{"id":"43539","type":"LegendItem"}],"plot":{"id":"43502","subtype":"Figure","type":"Plot"}},"id":"43538","type":"Legend"},{"attributes":{"field":"angle"},"id":"43526","type":"CumSum"},{"attributes":{"label":{"field":"country"},"renderers":[{"id":"43531","type":"GlyphRenderer"}]},"id":"43539","type":"LegendItem"},{"attributes":{"callback":null,"data":{"angle":{"__ndarray__":"GC1EVPsh2T8/0DjGpvH0P4TbSZslOvs/ZXMtOFLB4D/SITN/fNkCQA==","dtype":"float64","shape":[5]},"color":["#4a1486","#6a51a3","#807dba","#9e9ac8","#bcbddc"],"country":["Gym","Other","Sleep","Study","Work"],"index":[0,1,2,3,4],"value":{"__ndarray__":"AAAAAAAAsD+rqqqqqqrKP1VVVVVVVdE/VVVVVVVVtT8AAAAAAADYPw==","dtype":"float64","shape":[5]}},"selected":{"id":"44309","type":"Selection"},"selection_policy":{"id":"44308","type":"UnionRenderers"}},"id":"43527","type":"ColumnDataSource"}],"root_ids":["43502"]},"title":"Bokeh Application","version":"1.0.2"}};
+  var render_items = [{"docid":"166eebdd-1e51-4c1f-952e-4a7bdf220d7c","roots":{"43502":"bddef866-9fc0-4499-b102-17e230e0dfba"}}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
 
   }
@@ -14331,6 +14356,25 @@ var element = $('#aef01d20-037b-478b-bc48-ff1b49fa6a90');
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="GET-IN-TOUCH">GET IN TOUCH<a class="anchor-link" href="#GET-IN-TOUCH">&#182;</a></h3><p>Feel free to contact me at:</p>
+<center><a href="mailto:luca.fontanili93@gmail.com"><i class="fa fa-envelope"></i> luca.fontanili93@gmail.com</a></center><p><strong>This is still a work in progress</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="spinner.gif" width=200 align="center"></p>
+
+</div>
+</div>
 </div>
     </div>
   </div>
