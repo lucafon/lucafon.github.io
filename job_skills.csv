@@ -1,8 +1,10 @@
 type;description;level;tooltip
-Programming Language;Java;9.5;Proficient User (4+ years everyday working experience)
+Programming Language;Java;9;Proficient User (4+ years everyday working experience)
 Programming Language;Python;7;Independent User (3+ years experience on personal projects)
 Programming Language;C/C++;5;Basic User (2 years school experience)
 Programming Language;R;4;Basic User (1 year experience on personal projects)
+Programming Language;HTML;4;Basic User (hands-on experience on work and personal projects)
+Programming Language;JavaScript;4;Basic User (hands-on experience on work and personal projects)
 Programming Language;MATLAB;4;Basic User (1 year experience on personal projects)
 Programming Language;VHDL;3;Basic User (1 year school experience)
 Programming Language;PROLOG;3;Basic User (1 year school experience)
