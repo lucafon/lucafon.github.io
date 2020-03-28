@@ -13365,19 +13365,11 @@ $(document).ready(function(){
 <span class="n">X</span> <span class="o">=</span> <span class="n">hvec</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
 <span class="n">tsne</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span><span class="n">perplexity</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">X_embedded</span> <span class="o">=</span> <span class="n">tsne</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
+<span class="n">working_experiences</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_embedded</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">working_experiences</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_embedded</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
 </pre></div>
@@ -13467,10 +13459,10 @@ $(document).ready(function(){
 
 
 
-<div id="a668b710-bbc1-4c15-afde-b41287e28911"></div>
+<div id="5f816c01-bbdf-4c23-9e28-a1714a79b597"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a668b710-bbc1-4c15-afde-b41287e28911');
+var element = $('#5f816c01-bbdf-4c23-9e28-a1714a79b597');
 
 (function(root) {
   function now() {
@@ -13798,10 +13790,10 @@ var element = $('#a668b710-bbc1-4c15-afde-b41287e28911');
 
 
 
-<div id="2dd3d56d-ed82-4503-8305-be5c9c1d5a86"></div>
+<div id="6224b451-08f8-477d-ab2c-669eb3c60668"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2dd3d56d-ed82-4503-8305-be5c9c1d5a86');
+var element = $('#6224b451-08f8-477d-ab2c-669eb3c60668');
 (function(root) {
   function embed_document(root) {
     
@@ -13839,38 +13831,10 @@ var element = $('#2dd3d56d-ed82-4503-8305-be5c9c1d5a86');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">working_experiences</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_embedded</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">working_experiences</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">X_embedded</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_breaks</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
-    <span class="n">total_chars</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)):</span>
-        <span class="n">total_chars</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">total_chars</span> <span class="o">&gt;</span> <span class="n">length</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="s1">&#39;&lt;br&gt;&#39;</span> <span class="o">+</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">total_chars</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">data</span>
-
-<span class="k">def</span> <span class="nf">plot_working_experience</span><span class="p">(</span><span class="n">employer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">plot_working_experience</span><span class="p">(</span><span class="n">employer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">600</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">employer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Do you work on your own?&#39;</span><span class="p">)</span>
     <span class="kn">from</span> <span class="nn">bokeh.plotting</span> <span class="kn">import</span> <span class="n">figure</span><span class="p">,</span> <span class="n">output_notebook</span><span class="p">,</span> <span class="n">show</span>
@@ -13965,10 +13929,10 @@ var element = $('#2dd3d56d-ed82-4503-8305-be5c9c1d5a86');
 
 
 
-<div id="c9096a41-fc3b-4a16-9d80-3db6b3764999"></div>
+<div id="b1af171d-33cf-4b16-825a-6f3b8ed81bb7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c9096a41-fc3b-4a16-9d80-3db6b3764999');
+var element = $('#b1af171d-33cf-4b16-825a-6f3b8ed81bb7');
 
 (function(root) {
   function now() {
@@ -14296,10 +14260,10 @@ var element = $('#c9096a41-fc3b-4a16-9d80-3db6b3764999');
 
 
 
-<div id="4f316c24-52e6-4fb6-88da-cc0c71e97196"></div>
+<div id="74c870c9-9994-4e7a-9f63-8eff5cbe1022"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4f316c24-52e6-4fb6-88da-cc0c71e97196');
+var element = $('#74c870c9-9994-4e7a-9f63-8eff5cbe1022');
 (function(root) {
   function embed_document(root) {
     
@@ -14384,10 +14348,10 @@ var element = $('#4f316c24-52e6-4fb6-88da-cc0c71e97196');
 
 
 
-<div id="9db30110-9c79-4eb5-8c9c-143663fc8bdc"></div>
+<div id="6a9ee796-b766-496f-8f44-b098e7114529"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9db30110-9c79-4eb5-8c9c-143663fc8bdc');
+var element = $('#6a9ee796-b766-496f-8f44-b098e7114529');
 
 (function(root) {
   function now() {
@@ -14715,10 +14679,10 @@ var element = $('#9db30110-9c79-4eb5-8c9c-143663fc8bdc');
 
 
 
-<div id="7a9993c9-e157-4757-8cab-74d7bf5bd26a"></div>
+<div id="e57a11af-e4b4-4ebb-b693-79d514d3a8cc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7a9993c9-e157-4757-8cab-74d7bf5bd26a');
+var element = $('#e57a11af-e4b4-4ebb-b693-79d514d3a8cc');
 (function(root) {
   function embed_document(root) {
     
@@ -14803,10 +14767,10 @@ var element = $('#7a9993c9-e157-4757-8cab-74d7bf5bd26a');
 
 
 
-<div id="a19a6e28-5fc0-4cd3-a1be-4e8e5e4cabc7"></div>
+<div id="74a60c4e-cae8-4c73-b447-71c89c673b8f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a19a6e28-5fc0-4cd3-a1be-4e8e5e4cabc7');
+var element = $('#74a60c4e-cae8-4c73-b447-71c89c673b8f');
 
 (function(root) {
   function now() {
@@ -15134,10 +15098,10 @@ var element = $('#a19a6e28-5fc0-4cd3-a1be-4e8e5e4cabc7');
 
 
 
-<div id="c8064f7f-b0ff-494f-ab32-bd2d58742e6f"></div>
+<div id="b6207e2a-3303-4245-aa55-425d5589df49"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c8064f7f-b0ff-494f-ab32-bd2d58742e6f');
+var element = $('#b6207e2a-3303-4245-aa55-425d5589df49');
 (function(root) {
   function embed_document(root) {
     
@@ -15223,10 +15187,10 @@ var element = $('#c8064f7f-b0ff-494f-ab32-bd2d58742e6f');
 
 
 
-<div id="73f4c654-b665-4f80-b53d-fee0ad2ff374"></div>
+<div id="43ce7968-7d43-45b8-9098-32e4cc0eaa27"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#73f4c654-b665-4f80-b53d-fee0ad2ff374');
+var element = $('#43ce7968-7d43-45b8-9098-32e4cc0eaa27');
 
 (function(root) {
   function now() {
@@ -15554,10 +15518,10 @@ var element = $('#73f4c654-b665-4f80-b53d-fee0ad2ff374');
 
 
 
-<div id="08ec53a1-dfbd-4645-9ca7-03725620d184"></div>
+<div id="c285ad2c-25e7-4543-9ed0-84c62c7e9673"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#08ec53a1-dfbd-4645-9ca7-03725620d184');
+var element = $('#c285ad2c-25e7-4543-9ed0-84c62c7e9673');
 (function(root) {
   function embed_document(root) {
     
@@ -15769,10 +15733,10 @@ var element = $('#08ec53a1-dfbd-4645-9ca7-03725620d184');
 
 
 
-<div id="a5e1a55a-7a88-4d59-b8dd-1ba90b2d88f2"></div>
+<div id="260bdd91-48c7-4dc1-aade-1cb8aa7db3ae"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a5e1a55a-7a88-4d59-b8dd-1ba90b2d88f2');
+var element = $('#260bdd91-48c7-4dc1-aade-1cb8aa7db3ae');
 
 (function(root) {
   function now() {
@@ -16100,10 +16064,10 @@ var element = $('#a5e1a55a-7a88-4d59-b8dd-1ba90b2d88f2');
 
 
 
-<div id="6b04773d-9695-4acb-a27e-76681a2a5ca5"></div>
+<div id="54fbf215-9a2a-48ce-b7f6-38d74185de16"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6b04773d-9695-4acb-a27e-76681a2a5ca5');
+var element = $('#54fbf215-9a2a-48ce-b7f6-38d74185de16');
 (function(root) {
   function embed_document(root) {
     
@@ -16187,10 +16151,10 @@ var element = $('#6b04773d-9695-4acb-a27e-76681a2a5ca5');
 
 
 
-<div id="24b20941-87d0-43f5-99b6-946c27c1cf89"></div>
+<div id="b238976f-e9f6-49a6-bb73-8ceaddcc9dc4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#24b20941-87d0-43f5-99b6-946c27c1cf89');
+var element = $('#b238976f-e9f6-49a6-bb73-8ceaddcc9dc4');
 
 (function(root) {
   function now() {
@@ -16518,10 +16482,10 @@ var element = $('#24b20941-87d0-43f5-99b6-946c27c1cf89');
 
 
 
-<div id="c043d128-3cc3-49b4-a766-98624854b784"></div>
+<div id="d041a4bd-5fd5-453f-a6a9-a09779c7ff4f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c043d128-3cc3-49b4-a766-98624854b784');
+var element = $('#d041a4bd-5fd5-453f-a6a9-a09779c7ff4f');
 (function(root) {
   function embed_document(root) {
     
@@ -16606,10 +16570,10 @@ var element = $('#c043d128-3cc3-49b4-a766-98624854b784');
 
 
 
-<div id="1adf68c5-d276-4c0e-b3f9-46a530f9c4b4"></div>
+<div id="54ca662c-32b8-42cf-82ce-909c34bd5f37"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1adf68c5-d276-4c0e-b3f9-46a530f9c4b4');
+var element = $('#54ca662c-32b8-42cf-82ce-909c34bd5f37');
 
 (function(root) {
   function now() {
@@ -16937,10 +16901,10 @@ var element = $('#1adf68c5-d276-4c0e-b3f9-46a530f9c4b4');
 
 
 
-<div id="09350ed7-27d6-4cd2-9b34-a5ce4569d806"></div>
+<div id="e2a0b1f8-9d38-4ff7-a9ed-1b79b9575b6b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#09350ed7-27d6-4cd2-9b34-a5ce4569d806');
+var element = $('#e2a0b1f8-9d38-4ff7-a9ed-1b79b9575b6b');
 (function(root) {
   function embed_document(root) {
     
@@ -17431,10 +17395,10 @@ Tokyo, November 2013</p>
 
 
 
-<div id="b41507a2-fcb8-443d-a420-b95cfd1e32d1"></div>
+<div id="4fcc1390-84c7-4038-b90e-fa41283c3397"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b41507a2-fcb8-443d-a420-b95cfd1e32d1');
+var element = $('#4fcc1390-84c7-4038-b90e-fa41283c3397');
 
 (function(root) {
   function now() {
@@ -17762,10 +17726,10 @@ var element = $('#b41507a2-fcb8-443d-a420-b95cfd1e32d1');
 
 
 
-<div id="3b341aa2-c90a-435f-8fa5-9aae8b56a77d"></div>
+<div id="90957ed6-e94e-479b-be13-3de443961f3b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3b341aa2-c90a-435f-8fa5-9aae8b56a77d');
+var element = $('#90957ed6-e94e-479b-be13-3de443961f3b');
 (function(root) {
   function embed_document(root) {
     
