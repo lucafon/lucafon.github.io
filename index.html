@@ -16356,9 +16356,103 @@ Big Data lover, Artificial Intelligence and Machine Learning enthusiast, Compute
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="PERSONAL-INFORMATION">PERSONAL INFORMATION<a class="anchor-link" href="#PERSONAL-INFORMATION">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_colwidth&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cv.db&#39;</span><span class="p">)</span>
+<span class="n">lf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users WHERE id=&quot;luca fontanili&quot;&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;center&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;profile.jpg&quot; width=230/&gt;&lt;/td&gt;&lt;td&gt;</span><span class="si">{}</span><span class="s1">&lt;/td&gt;&lt;/table&gt;&lt;/center&gt;&#39;</span>
+             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lf</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<center><table><tr><td><img src="profile.jpg" width=230/></td><td><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>id</th>
+      <th>luca fontanili</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>email</th>
+      <td>luca.fontanili93@gmail.com</td>
+    </tr>
+    <tr>
+      <th>skype</th>
+      <td>luca.fontanili</td>
+    </tr>
+    <tr>
+      <th>sex</th>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>birthdate</th>
+      <td>22/01/1990</td>
+    </tr>
+    <tr>
+      <th>nationality</th>
+      <td>Italian</td>
+    </tr>
+  </tbody>
+</table></td></table></center>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center>
+<div id="banner">
+    <div style="display: inline-block;">
+        <a href="https://github.com/lucafon"><img src ="github.png" width=50></a>
+    </div>
+    <div style="display: inline-block;">
+        <a href="https://www.linkedin.com/in/luca-fontanili"><img src ="linkedin.png" width=50></a>
+    </div>
+    <div style="display: inline-block;">
+        <a href="https://pypi.org/user/lucafon"><img src ="pypi.png" width=100></a>
+    </div>
+</div>
+</center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
@@ -16432,7 +16526,7 @@ $(document).ready(function(){
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;download.html&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -16500,31 +16594,13 @@ $(document).ready(function(){
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="PERSONAL-INFORMATION">PERSONAL INFORMATION<a class="anchor-link" href="#PERSONAL-INFORMATION">&#182;</a></h2>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;max_colwidth&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">sqlite3</span>
-
-<span class="k">def</span> <span class="nf">load_map_frame</span><span class="p">():</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;map_frame_new.html&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cv.db&#39;</span><span class="p">)</span>
-<span class="n">lf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM users WHERE id=&quot;luca fontanili&quot;&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="n">lf</span> <span class="o">=</span> <span class="n">lf</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;center&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&quot;profile.jpg&quot; width=230/&gt;</span><span class="si">{}</span><span class="s1">&lt;/td&gt;&lt;td&gt;</span><span class="si">{}</span><span class="s1">&lt;/td&gt;&lt;/table&gt;&lt;/center&gt;&#39;</span>
-             <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lf</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span> <span class="n">load_map_frame</span><span class="p">())))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.91704532831!2d10.304617742239364!3d44.78515805064453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia%20Italo%20Pizzi%2C</span><span class="si">%207%</span><span class="s1">2C</span><span class="si">%2043123%</span><span class="s1">20Parma%20PR!5e0!3m2!1sen!2sit!4v1615846867024!5m2!1sen!2sit&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">350</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -16537,41 +16613,20 @@ $(document).ready(function(){
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[68]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea ">
-<center><table><tr><td><img src="profile.jpg" width=230/><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>id</th>
-      <th>luca fontanili</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>email</th>
-      <td>luca.fontanili93@gmail.com</td>
-    </tr>
-    <tr>
-      <th>skype</th>
-      <td>luca.fontanili</td>
-    </tr>
-    <tr>
-      <th>sex</th>
-      <td>Male</td>
-    </tr>
-    <tr>
-      <th>birthdate</th>
-      <td>22/01/1990</td>
-    </tr>
-    <tr>
-      <th>nationality</th>
-      <td>Italian</td>
-    </tr>
-  </tbody>
-</table></td><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.5381591998807!2d10.32826211594382!3d44.790220086180575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia+Italo+Pizzi%2C+7%2C+43123+Parma+PR!5e0!3m2!1sen!2sit!4v1555920822794!5m2!1sen!2sit" style="width:100%; border:0" height="450" frameborder="0" allowfullscreen></iframe></td></table></center>
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="1200"
+            height="350"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.91704532831!2d10.304617742239364!3d44.78515805064453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia%20Italo%20Pizzi%2C%207%2C%2043123%20Parma%20PR!5e0!3m2!1sen!2sit!4v1615846867024!5m2!1sen!2sit"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
 </div>
 
 </div>
@@ -16579,25 +16634,6 @@ $(document).ready(function(){
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<center>
-<div id="banner">
-    <div style="display: inline-block;">
-        <a href="https://github.com/lucafon"><img src ="github.png" width=50></a>
-    </div>
-    <div style="display: inline-block;">
-        <a href="https://www.linkedin.com/in/luca-fontanili"><img src ="linkedin.png" width=50></a>
-    </div>
-    <div style="display: inline-block;">
-        <a href="https://pypi.org/user/lucafon"><img src ="pypi.png" width=100></a>
-    </div>
-</div>
-</center>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -16800,10 +16836,10 @@ $(document).ready(function(){
 
 
 
-<div id="554107d5-6ed9-4217-8451-db489984f222"></div>
+<div id="d5b47542-b210-4d1e-b7aa-46c2617fd5da"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#554107d5-6ed9-4217-8451-db489984f222');
+var element = $('#d5b47542-b210-4d1e-b7aa-46c2617fd5da');
 
 (function(root) {
   function now() {
@@ -17131,10 +17167,10 @@ var element = $('#554107d5-6ed9-4217-8451-db489984f222');
 
 
 
-<div id="e66c07dc-548e-4c02-a8d1-2572324acec5"></div>
+<div id="251d0de5-cd33-42db-b7c9-81a04bac4324"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e66c07dc-548e-4c02-a8d1-2572324acec5');
+var element = $('#251d0de5-cd33-42db-b7c9-81a04bac4324');
 (function(root) {
   function embed_document(root) {
     
@@ -17417,10 +17453,10 @@ var element = $('#e66c07dc-548e-4c02-a8d1-2572324acec5');
 
 
 
-<div id="03aec932-8b0d-4618-aaac-0a374ea5e2b8"></div>
+<div id="e9835b2e-566a-4a04-8cc4-61a0878e7b1c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#03aec932-8b0d-4618-aaac-0a374ea5e2b8');
+var element = $('#e9835b2e-566a-4a04-8cc4-61a0878e7b1c');
 
 (function(root) {
   function now() {
@@ -17748,10 +17784,10 @@ var element = $('#03aec932-8b0d-4618-aaac-0a374ea5e2b8');
 
 
 
-<div id="cb289ce3-d8b3-4539-a45d-5af3d8754585"></div>
+<div id="2679c92c-f810-4ecc-9c48-a3dbc9f7e86b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#cb289ce3-d8b3-4539-a45d-5af3d8754585');
+var element = $('#2679c92c-f810-4ecc-9c48-a3dbc9f7e86b');
 (function(root) {
   function embed_document(root) {
     
@@ -17835,10 +17871,10 @@ var element = $('#cb289ce3-d8b3-4539-a45d-5af3d8754585');
 
 
 
-<div id="9bf781f2-ce19-4c56-bf06-54a4f588d765"></div>
+<div id="6fb7323e-63ad-4a9c-9638-6374198fab14"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9bf781f2-ce19-4c56-bf06-54a4f588d765');
+var element = $('#6fb7323e-63ad-4a9c-9638-6374198fab14');
 
 (function(root) {
   function now() {
@@ -18166,10 +18202,10 @@ var element = $('#9bf781f2-ce19-4c56-bf06-54a4f588d765');
 
 
 
-<div id="1811eae5-444f-42f5-97d9-fa4906973faf"></div>
+<div id="dc31e055-4f3e-4d7a-ac0c-52568ed5b410"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1811eae5-444f-42f5-97d9-fa4906973faf');
+var element = $('#dc31e055-4f3e-4d7a-ac0c-52568ed5b410');
 (function(root) {
   function embed_document(root) {
     
@@ -18253,10 +18289,10 @@ var element = $('#1811eae5-444f-42f5-97d9-fa4906973faf');
 
 
 
-<div id="5edb0a12-b2cd-4f0c-976d-345195cdccee"></div>
+<div id="56915d19-98c7-4f7e-9e89-63d257d048eb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5edb0a12-b2cd-4f0c-976d-345195cdccee');
+var element = $('#56915d19-98c7-4f7e-9e89-63d257d048eb');
 
 (function(root) {
   function now() {
@@ -18584,10 +18620,10 @@ var element = $('#5edb0a12-b2cd-4f0c-976d-345195cdccee');
 
 
 
-<div id="007ca4c5-0468-4d55-b1cc-f87b7b5309fe"></div>
+<div id="a6c6c004-104d-4c88-a3b8-7302e0bfbac4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#007ca4c5-0468-4d55-b1cc-f87b7b5309fe');
+var element = $('#a6c6c004-104d-4c88-a3b8-7302e0bfbac4');
 (function(root) {
   function embed_document(root) {
     
@@ -18671,10 +18707,10 @@ var element = $('#007ca4c5-0468-4d55-b1cc-f87b7b5309fe');
 
 
 
-<div id="b4045c65-76a7-4d1b-a3de-d366ff44ac52"></div>
+<div id="8fa8e0d0-2085-4cf4-b460-2f137efec063"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b4045c65-76a7-4d1b-a3de-d366ff44ac52');
+var element = $('#8fa8e0d0-2085-4cf4-b460-2f137efec063');
 
 (function(root) {
   function now() {
@@ -19002,10 +19038,10 @@ var element = $('#b4045c65-76a7-4d1b-a3de-d366ff44ac52');
 
 
 
-<div id="36a9461a-bb86-42fc-9de4-8d78fc6e83dc"></div>
+<div id="cb536d11-4235-44f3-8b96-73c4f50d100a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#36a9461a-bb86-42fc-9de4-8d78fc6e83dc');
+var element = $('#cb536d11-4235-44f3-8b96-73c4f50d100a');
 (function(root) {
   function embed_document(root) {
     
@@ -19090,10 +19126,10 @@ var element = $('#36a9461a-bb86-42fc-9de4-8d78fc6e83dc');
 
 
 
-<div id="a868630e-8fe1-49fc-87f6-2ca726ee9966"></div>
+<div id="ea25ccda-e228-4d89-9f4a-29ea6eec8b12"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a868630e-8fe1-49fc-87f6-2ca726ee9966');
+var element = $('#ea25ccda-e228-4d89-9f4a-29ea6eec8b12');
 
 (function(root) {
   function now() {
@@ -19421,10 +19457,10 @@ var element = $('#a868630e-8fe1-49fc-87f6-2ca726ee9966');
 
 
 
-<div id="56b8faa8-1fea-4e5c-9590-bf0b8aa2460b"></div>
+<div id="85210870-f96d-4b5a-a859-39408a6df64c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#56b8faa8-1fea-4e5c-9590-bf0b8aa2460b');
+var element = $('#85210870-f96d-4b5a-a859-39408a6df64c');
 (function(root) {
   function embed_document(root) {
     
