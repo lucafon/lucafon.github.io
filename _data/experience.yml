@@ -1,0 +1,41 @@
+# Experience template
+- layout: left
+  company: Cedacri
+  link: https://www.cedacri.it
+  job_title: Innovation Area Manager
+  dates: February 2020 - Present
+  logo: images/cedacri.png
+  #quote: >
+  # Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    <mark>Business or sector</mark> Research & Development, Data & Analytics, Machine Learning, Cloud
+- layout: left
+  company: myInvenio
+  link: https://www.my-invenio.com
+  job_title: Senior Engineer ML - Data Scientist
+  dates: February 2019 - February 2020
+  logo: images/myinvenio.webp
+  #quote: >
+  # Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    <mark>Business or sector</mark> Data Science, Machine Learning, Process Discovery & Mining
+- layout: left
+  company: Ubiq S.R.L. - SIA Group
+  link: https://www.sia.eu
+  job_title: Computer Engineer – Software Development Leader
+  dates: March 2015 - February 2019
+  logo: images/sia.png
+  #quote: >
+  # Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    <mark>Business or sector</mark> Computer Engineering, Big Data, Machine Learning
+- layout: left
+  company: Datalogic ADC Inc
+  link: https://www.datalogic.com/eng/index.html
+  job_title: Software Engineering Intern
+  dates: August 2014 - February 2015
+  logo: images/datalogic.png
+  #quote: >
+  # Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    <mark>Business or sector</mark> Computer Vision

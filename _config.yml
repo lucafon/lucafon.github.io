@@ -1,11 +1,136 @@
-lsi: false
-safe: true
-source: /
-incremental: false
-highlighter: rouge
-markdown: kramdown
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+# Site
+repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
+# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
+
+markdown: CommonMarkGhPages
+
+# Personal info
+name: Luca Fontanili
+title: Innovation Area Manager @ Cedacri
+email: luca.fontanili93@gmail.com
+#phone: Your phone number (optional)
+cv   : "resume.pdf"
+#website: Your website (eg. https://google.com)(optional)
+
+# Social links
+#twitter_username: jekyllrb
+github_username:  lucafon
+#dribbble_username: jekyll
+#facebook_username: jekyll
+#flickr_username: jekyll
+#instagram_username: jekyll
+linkedin_username: luca-fontanili
+#xing_username: jekyll
+#pinterest_username: jekyll
+#youtube_username: jekyll
+#googleplus_username: +jekyll
+pypi_username: lucafon
+
+# About Section
+# about_title: About Me (Use this to override about section title)
+about_profile_image: images/profile.jpeg
+about_content: | # this will include new lines to allow paragraphs
+  Currently Head of Innovation Area in Cedacri; former Data Scientist and Back-End developer. 
+
+  Big Data lover, Artificial Intelligence and Machine Learning enthusiast, Computer Vision passionate, eager learner, teammate.
+  
+  [![AWS CSAA](images/aws-csaa.png "Title")](https://www.credly.com/badges/61dfd9e1-489e-405a-ad04-ef48305cd618)
+  
+  [Download my resume](https://lucafon.github.io/fontanili.pdf)
+
+# Experience Section
+# experience_title: Experience #(Use this to override about experience section title)
+
+# Education Section
+# education_title: Education #(Use this to override about education section title)
+
+# Projects Section
+# projects_title: Projects #(Use this to override about projects section title)
+
+# More Section
+# more_title: A Little More About Me #(Use this to override about more section title)
+more_content: | # this will include new lines to allow paragraphs
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.91704532831!2d10.304617742239364!3d44.78515805064453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia%20Italo%20Pizzi%2C%207%2C%2043123%20Parma%20PR!5e0!3m2!1sen!2sit!4v1615846867024!5m2!1sen!2sit" width="100%" height="350"></iframe>
+
+  <details><summary>CLICK ME</summary>
+  <p>
+
+  ```python
+  import matplotlib.pyplot as plt
+  import numpy as np
+  %matplotlib inline
+  
+  import nltk
+  from nltk.corpus import stopwords
+  nltk.download('stopwords', quiet=True)
+  nltk.download('punkt', quiet=True)
+  from nltk.tokenize import word_tokenize
+  import string
+  
+  from sklearn.feature_extraction.text import HashingVectorizer
+  from sklearn.manifold import TSNE
+  from sklearn.cluster import KMeans
+  
+  working_experiences = pd.read_sql_query('SELECT * FROM work_experiences where employer in ("Ubiq", "MyInvenio", "Cedacri", "Datalogic")', conn)
+  descriptions = working_experiences.drop(['employer', 'keyword'], axis=1)
+  keywords = working_experiences.drop(['employer', 'description'], axis=1)
+  employers = working_experiences.drop(['description', 'keyword'], axis=1)
+  
+  def split_and_clean(input_string):
+      return word_tokenize(str(input_string).lower().translate(str.maketrans('', '', string.punctuation)))
+  
+  words = []
+  for idx in range(0, len(descriptions)):
+      
+      word_list = [word for word in split_and_clean(descriptions.iloc[idx]['description']) if not word in stopwords.words()]
+      word_list += ([word for word in split_and_clean(keywords.iloc[idx]['keyword']) if not word in stopwords.words()])
+      words.append(word_list)
+  
+  hvec = HashingVectorizer(lowercase=False, analyzer=lambda l:l, n_features=2**10)
+  X = hvec.fit_transform(words)
+  tsne = TSNE(perplexity=5, method='exact')
+  X_embedded = tsne.fit_transform(X.toarray())
+  
+  working_experiences['x'] = X_embedded[:,0]
+  working_experiences['y'] = X_embedded[:,1]
+  
+  k = 7
+  kmeans = KMeans(n_clusters=k, n_jobs=8)
+  y_pred = kmeans.fit_predict(X_embedded)
+  ```
+
+  </p>
+  </details>
+
+  Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+  
+  
+
+# Footer
+footer_show_references: true
+
+# Build settings
+# theme: modern-resume-theme (Use this is you are hosting your resume yourself)
+# remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
+
+exclude : [
+  "makefile",
+  "Gemfile",
+  "Gemfile.lock",
+  "node_modules",
+  "vendor/bundle/",
+  "vendor/cache/",
+  "vendor/gems/",
+  "vendor/ruby/",
+  "lib/",
+  "scripts/",
+  "docker-compose.yml",
+  ]
