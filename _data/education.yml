@@ -1,0 +1,28 @@
+# Education Template
+- layout: left
+  name: Data Science and AI group in Parma
+  dates: October 2017 - Present
+  qualification: Member and speaker
+  logo: images/dsai.jpeg
+  #quote: >
+  #  Short institution or course description (optional)
+  description: | # this will include new lines to allow paragraphs
+    Speaker at public events on Machine Learning and Data Science topics
+- layout: left
+  name: University of Bologna
+  dates: September 2012 - March 2015
+  qualification: Master's Degree in Computer Engineering QEQ7
+  logo: images/unibo.png
+  quote: >
+    110/110 with Honours
+  description: | # this will include new lines to allow paragraphs
+    <mark>Thesis</mark> Development of parallel processing approach to compute Zero-mean Normalized Cross- Correlation. CUDA framework has been used to develop fast approach to detect characters in images, using Template Matching approach, based on Zero-mean Normalized Cross-Correlation measure
+- layout: left
+  name: University of Parma
+  dates: September 2009 - July 2012
+  qualification: Bachelor's Degree in Computer Engineering QEQ6
+  logo: images/unipr.png
+  quote: >
+    107/110
+  description: | # this will include new lines to allow paragraphs
+    <mark>Thesis</mark> A Machine Learning project based on arm gesture recognition and humanoid imitation. Arm gestures are acquired by inertial motion sensors and modelled in an OpenGL 3D virtual space. A new method based on Functional Principal Component Analysis is used in MATLAB for both a supervised clustering of training data and gesture recognition. Recognized gestures are imitated by a small humanoid robot

@@ -1,0 +1,85 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.0.min.js" integrity="sha384-5Y+xuMRAbgBj/2WKUiL8yzV4fBFic1HJPo2hT3pq2IsEzbsJjj8kT2i0b1lZ7C2N" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="f9072f31-f2ce-453e-bfed-ce85b04e8ab2" data-root-id="2571"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="2706">
+          {"12da15ba-cf18-43bb-8f82-de3a88012b8b":{"roots":{"references":[{"attributes":{},"id":"2583","type":"CategoricalTicker"},{"attributes":{},"id":"2613","type":"BasicTickFormatter"},{"attributes":{"data_source":{"id":"2570"},"glyph":{"id":"2606"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"2607"},"selection_glyph":null,"view":{"id":"2609"}},"id":"2608","type":"GlyphRenderer"},{"attributes":{},"id":"2594","type":"HelpTool"},{"attributes":{},"id":"2611","type":"CategoricalTickFormatter"},{"attributes":{},"id":"2593","type":"ResetTool"},{"attributes":{"below":[{"id":"2582"}],"center":[{"id":"2584"},{"id":"2588"}],"left":[{"id":"2585"}],"outline_line_color":null,"plot_height":400,"plot_width":700,"renderers":[{"id":"2608"}],"title":{"id":"2572"},"toolbar":{"id":"2596"},"toolbar_location":null,"x_range":{"id":"2574"},"x_scale":{"id":"2578"},"y_range":{"id":"2576"},"y_scale":{"id":"2580"}},"id":"2571","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"2616","type":"UnionRenderers"},{"attributes":{"axis":{"id":"2582"},"grid_line_color":null,"ticker":null},"id":"2584","type":"Grid"},{"attributes":{},"id":"2590","type":"WheelZoomTool"},{"attributes":{"text":"Expertise level"},"id":"2572","type":"Title"},{"attributes":{"data":{"description":["Git / SVN","Junit 4/5","Mockito","CI/CD","SonarQube","Veracode","Design Patterns","Spring 4/5","JMS","ActiveMQ","Hibernate","Kanban / SCRUM"],"index":[29,27,28,31,32,33,22,23,24,25,26,30],"level":{"__ndarray__":"AAAAAAAAIEAAAAAAAAAgQAAAAAAAABxAAAAAAAAAHEAAAAAAAAAcQAAAAAAAABhAAAAAAAAAIEAAAAAAAAAcQAAAAAAAABhAAAAAAAAAGEAAAAAAAAAQQAAAAAAAACBA","dtype":"float64","shape":[12]},"subtype":["VCS","Unit Testing","Unit Testing","Pipelines","Pipelines","Pipelines","Java","Framework","Framework","Framework","Framework","Agile"],"tooltip":["Proficient User (5+ years everyday working experience)","Proficient User (4+ years everyday working experience)","Independent User (2+ years everyday working experience)","Independent User (3+ years everyday working experience)","Independent User (3+ years everyday working experience)","Independent User (1 year everyday working experience)","Proficient User (5+ years everyday working experience)","Independent User(1+ year everyday working experience)","Independent User (4 years everyday working experience)","Independent User (4 years everyday working experience)","Basic User (1 year experience on personal projects)","Proficient User (4+ years everyday working experience)"],"type":["DevOps","Java","Java","DevOps","DevOps","DevOps","Java","Java","Java","Java","Java","DevOps"]},"selected":{"id":"2615"},"selection_policy":{"id":"2616"}},"id":"2570","type":"ColumnDataSource"},{"attributes":{},"id":"2615","type":"Selection"},{"attributes":{"factors":["Git / SVN","Junit 4/5","Mockito","CI/CD","SonarQube","Veracode","Design Patterns","Spring 4/5","JMS","ActiveMQ","Hibernate","Kanban / SCRUM"],"range_padding":0.1},"id":"2574","type":"FactorRange"},{"attributes":{"axis":{"id":"2585"},"dimension":1,"ticker":null},"id":"2588","type":"Grid"},{"attributes":{"callback":null,"tooltips":"\n        &lt;div style=\"width:300px\"&gt;\n            &lt;table&gt;\n                &lt;tr&gt;&lt;td style=\"color:DodgerBlue;\"&gt;Name&lt;/td&gt;&lt;td style=\"text-align: center;\"&gt;&lt;b&gt;@description&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;\n                &lt;tr&gt;&lt;td style=\"color:DodgerBlue;\"&gt;Type&lt;/td&gt;&lt;td style=\"text-align: center;\"&gt;@subtype&lt;/td&gt;&lt;/tr&gt;\n                &lt;tr&gt;&lt;td style=\"color:DodgerBlue;\"&gt;Details&lt;/td&gt;&lt;td style=\"text-align: center;\"&gt;@tooltip&lt;/td&gt;&lt;/tr&gt;\n            &lt;/table&gt;\n        &lt;/div&gt;\n    "},"id":"2595","type":"HoverTool"},{"attributes":{"source":{"id":"2570"}},"id":"2609","type":"CDSView"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"field":"subtype","transform":{"id":"2604"}},"line_alpha":{"value":0.1},"line_color":{"value":"white"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"2607","type":"VBar"},{"attributes":{},"id":"2586","type":"BasicTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"2589"},{"id":"2590"},{"id":"2591"},{"id":"2592"},{"id":"2593"},{"id":"2594"},{"id":"2595"}]},"id":"2596","type":"Toolbar"},{"attributes":{},"id":"2592","type":"SaveTool"},{"attributes":{"fill_color":{"field":"subtype","transform":{"id":"2604"}},"line_color":{"value":"white"},"top":{"field":"level"},"width":{"value":1},"x":{"field":"description"}},"id":"2606","type":"VBar"},{"attributes":{"end":1,"factors":["Agile","Framework","Java","Pipelines","Unit Testing","VCS"],"palette":["#08306b","#08519c","#2171b5","#4292c6","#6baed6","#9ecae1","#c6dbef","#deebf7","#f7fbff"]},"id":"2604","type":"CategoricalColorMapper"},{"attributes":{},"id":"2580","type":"LinearScale"},{"attributes":{},"id":"2578","type":"CategoricalScale"},{"attributes":{"formatter":{"id":"2613"},"ticker":{"id":"2586"}},"id":"2585","type":"LinearAxis"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"2617","type":"BoxAnnotation"},{"attributes":{"axis_label":"Java &amp; DevOps","formatter":{"id":"2611"},"major_label_orientation":1.2,"ticker":{"id":"2583"}},"id":"2582","type":"CategoricalAxis"},{"attributes":{},"id":"2589","type":"PanTool"},{"attributes":{"overlay":{"id":"2617"}},"id":"2591","type":"BoxZoomTool"},{"attributes":{"end":10,"start":0},"id":"2576","type":"DataRange1d"}],"root_ids":["2571"]},"title":"Bokeh Application","version":"2.0.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('2706').textContent;
+                  var render_items = [{"docid":"12da15ba-cf18-43bb-8f82-de3a88012b8b","root_ids":["2571"],"roots":{"2571":"f9072f31-f2ce-453e-bfed-ce85b04e8ab2"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>
