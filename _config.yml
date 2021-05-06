@@ -3,6 +3,7 @@ repository: Git repository where your resume will be hosted, only required if yo
 # favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 markdown: CommonMarkGhPages
+google_analytics: G-SSF4PV3KNH
 
 # Personal info
 name: Luca Fontanili
@@ -239,7 +240,6 @@ more_content: | # this will include new lines to allow paragraphs
   <p>
 
   ```python
-
   import os
   from PIL import Image
   
