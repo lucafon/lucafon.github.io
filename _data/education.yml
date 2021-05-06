@@ -14,7 +14,7 @@
   qualification: Master's Degree in Computer Engineering QEQ7
   logo: images/unibo.png
   quote: >
-    <mark>Final Grade</mark> 110/110 with Honours
+    110/110 with Honours
   description: | # this will include new lines to allow paragraphs
     <mark>Thesis</mark> Development of parallel processing approach to compute Zero-mean Normalized Cross- Correlation. CUDA framework has been used to develop fast approach to detect characters in images, using Template Matching approach, based on Zero-mean Normalized Cross-Correlation measure
 - layout: left
@@ -23,6 +23,6 @@
   qualification: Bachelor's Degree in Computer Engineering QEQ6
   logo: images/unipr.png
   quote: >
-    <mark>Final Grade</mark> 107/110
+    107/110
   description: | # this will include new lines to allow paragraphs
     <mark>Thesis</mark> A Machine Learning project based on arm gesture recognition and humanoid imitation. Arm gestures are acquired by inertial motion sensors and modelled in an OpenGL 3D virtual space. A new method based on Functional Principal Component Analysis is used in MATLAB for both a supervised clustering of training data and gesture recognition. Recognized gestures are imitated by a small humanoid robot

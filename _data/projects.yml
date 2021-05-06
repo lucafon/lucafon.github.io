@@ -1,9 +1,9 @@
 # Project template
-- layout: top-middle
-  name: myInvenio
-  link: https://www.my-invenio.com/
-  #github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
-  quote: >
-    A Process Mining tool to gather insightful from business processes
-  description: | # this will include new lines to allow paragraphs
-    Description about the work on/with the project
+#- layout: top-middle
+#  name: Challenges
+#  link: https://generali.datachallenge.it/competitions/40#final
+#  #github: Github page for project (eg. sproogen/modern-resume-theme)(optional)
+#  quote: >
+#    Generali Data Challenge
+#  description: | # this will include new lines to allow paragraphs
+#    Top 10 finalist

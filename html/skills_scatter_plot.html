@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Bokeh Plot</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.0.min.js" integrity="sha384-5Y+xuMRAbgBj/2WKUiL8yzV4fBFic1HJPo2hT3pq2IsEzbsJjj8kT2i0b1lZ7C2N" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.0.min.js" integrity="sha384-2ltAd1cQhavmLeBEZXGgnna8fjbw+FjvDq9m2dig4+8KVS8JcYFUQaALvLT//qHE" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="0c4e672e-65b4-4e2c-97b5-3a5a9b5bb393" data-root-id="1943"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="2021">
+          {"95812922-2a9f-4add-8796-21adec82cb6a":{"roots":{"references":[{"attributes":{"args":{"labels":{"id":"1933"}},"code":"\n    if(this.active == '0') {\n        labels.visible = true\n        console.log('true')\n    } else {\n        labels.visible = false\n    }\n    labels.change.emit();\n"},"id":"1939","type":"CustomJS"},{"attributes":{},"id":"1916","type":"LinearScale"},{"attributes":{"children":[{"id":"1935"}]},"id":"1940","type":"Column"},{"attributes":{"formatter":{"id":"1945"},"major_label_text_color":null,"ticker":{"id":"1919"}},"id":"1918","type":"LinearAxis"},{"attributes":{},"id":"1919","type":"BasicTicker"},{"attributes":{"children":[{"id":"1940"},{"id":"1938"}]},"id":"1941","type":"Column"},{"attributes":{"axis":{"id":"1918"},"grid_line_color":null,"ticker":null},"id":"1921","type":"Grid"},{"attributes":{"children":[{"id":"1941"},{"id":"1936"}]},"id":"1942","type":"Column"},{"attributes":{"formatter":{"id":"1947"},"major_label_text_color":null,"ticker":{"id":"1923"}},"id":"1922","type":"LinearAxis"},{"attributes":{"children":[{"id":"1942"},{"id":"1907"}]},"id":"1943","type":"Column"},{"attributes":{},"id":"1923","type":"BasicTicker"},{"attributes":{"axis":{"id":"1922"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"1925","type":"Grid"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1906"}]},"id":"1926","type":"Toolbar"},{"attributes":{},"id":"1945","type":"BasicTickFormatter"},{"attributes":{"data_source":{"id":"1904"},"glyph":{"id":"1929"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1930"},"selection_glyph":null,"view":{"id":"1932"}},"id":"1931","type":"GlyphRenderer"},{"attributes":{},"id":"1949","type":"Selection"},{"attributes":{"active":0,"js_property_callbacks":{"change:active":[{"id":"1937"}]},"labels":["All","Ubiq","Datalogic","MyInvenio","Cedacri"]},"id":"1935","type":"RadioButtonGroup"},{"attributes":{"high":6,"low":0,"palette":["#08306b","#08519c","#2171b5","#4292c6","#6baed6","#9ecae1","#c6dbef","#deebf7","#f7fbff"]},"id":"1905","type":"LinearColorMapper"},{"attributes":{},"id":"1950","type":"UnionRenderers"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"field":"desc","transform":{"id":"1905"}},"line_alpha":{"value":0.1},"size":{"units":"screen","value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1930","type":"Scatter"},{"attributes":{"below":[{"id":"1918"}],"center":[{"id":"1921"},{"id":"1925"},{"id":"1933"}],"left":[{"id":"1922"}],"plot_height":650,"plot_width":650,"renderers":[{"id":"1931"}],"title":{"id":"1908"},"toolbar":{"id":"1926"},"toolbar_location":null,"x_range":{"id":"1910"},"x_scale":{"id":"1914"},"y_range":{"id":"1912"},"y_scale":{"id":"1916"}},"id":"1907","subtype":"Figure","type":"Plot"},{"attributes":{"data":{"desc":{"__ndarray__":"AQAAAAMAAAAGAAAAAAAAAAIAAAAEAAAAAAAAAAAAAAAEAAAAAQAAAAQAAAABAAAABAAAAAEAAAAFAAAABAAAAAQAAAACAAAAAAAAAAIAAAACAAAAAwAAAAQAAAACAAAABAAAAAYAAAAAAAAAAwAAAAMAAAAAAAAABQAAAAIAAAADAAAAAwAAAAUAAAAFAAAA","dtype":"int32","shape":[36]},"descriptions":["Coordinator of the Back-End development team (5+ developers), spreading Work Packages across the team using Agile tools","Development of Back-End system of different mobile applications in association with Poste Italiane (Extra Sconti, 100K+ active users per month), CartaSi (CashLessCity), Nivea (ConTATTO NIVEA), Barilla (Mio Mulino) and Samsung","Business Logic Manager of the project iCoop, in collaboration with Coop Italia. Manager of the Back-End development of the new couponing system within the iCoop mobile app","Development of the Back-End system and REST Web Services of Ti Frutta, an iOS and Android mobile app, using Data Mining and Machine Learning techniques on Cloud platform. Development of advanced and optimized algorithms to detect products on images of receipts using NoSQL databases (Solr, HBase) and OCR algorithms to read text from pictures using advanced image pre-processing techniques","Study and development of a predictive model that finds similarities between texts of different images using Text Mining and ML models","Development of a server-side binarization algorithm of raw receipt images using different image processing approaches (edge-detection, features extraction, thresholding) using OpenCV in Python","Development of a reliable tool to import data from RDBMS to Hadoop ecosystem using Sqoop, Spark, Hive and Impala","Development of a data replication flow between different Solr instances using Flume and Python","4+ years\u2019 experience on Java 8, lambdas and Design Patterns","Hands-on experience with Front-End solutions development using Extjs and HTML. Knowledge of web development tools such as Firebug","Experience with JMS (Java Messaging System) and Apache ActiveMQ message broker","Development of software solutions following agile practices (Kanban) and using versioning control systems such as SVN and Git","Experience with TDD development using Junit framework for unit testing both in Java and Python","Hands-on experience with WordPress plugins development using JavaScript, PHP and HTML","Hands-on experience with management of different Hadoop clusters (Cloudera and Ambari) from a system point of view (configuration, maintenance)","Working on the parallelization of a Computer Vision algorithm (Zero Mean Normalized Cross-Correlation), using the NVIDIA CUDA framework for C++ on a GPU embedded in a SoC (Tegra K1)","Development of testing programs for Computer Vision software solutions using Python","Use of different Machine Learning models in order to give the user insightful informations about the process flow automatically discovered by the process mining algorithms","Use of advanced Data Cleansing techniques to clean data in order to have a cleaner dataset and make better predictions/discover a better process model","Speaker at the BPM Next 2019 event, presenting the new Automatic Business Rules Discovery based on Machine Learning models to create Decision Tables in DMN (Domain Model Notation) standard","Study and development of a Machine Learning algorithm that finds correlations between contextual data (provided by the user) and the decision points in the BPMN diagram of the process. Development of a mapping from Decision Rules (boolean expressions) to DMN standard using FEEL","Setup of different pipelines in order to manage Continuous Integration/Continuous Delivery with Docker, AWS services, Sonarqube and synchronization with internalization tools","Setup of different test suites for non-regression, unit tests, functional and integration tests. Use of Mockito and JUnit framework together with Selenium for the client side test automation","Study, evaluation and put-in-production of different Machine Learning model to enhance the insights gathered with MyInvenio","Tutor of a PhD student enrolled in Brain, Mind and Computer Science course at the University of Padova. The first project was based on using Deep Learning to predict the remaining time and cost of a running process","Manager of the Area \"Innovative Solutions Incubator\", with main responsibilities on R&amp;D, Machine Learning, Data&amp;Analytics, Cloud Journey","Maintenance and improvement of Cedacri' s Data Lake on Hadoop platform on the Oracle Big Data Appliance (BDA)","Setup of different Data Warehouses for different clients","Setup of different Analytics tools to allow the clients to explore their data","Big Data Administrator: creation of users, groups, roles and grats in Sentry &amp; Ranger on the Big Data Appliance","Evaluation and setup of different Hadoop clusters (EMR, CDP) on public cloud (Azure, AWS)","Head of the Machine Learning team that creates and delivers serveral ML models for different banks","Production-level use of container orchestrators such as vanilla Kubernetes and OpenShift","Creation of different CI/CD pipelines in an enterprise environment using Jenkins, SonarQube, OpenShift, Kubernetes","Setup and release of several Machine Learning and Big Data projects using EMR and AWS managed services","Study and development of several different use cases on the cloud as a Cloud Service Provider (on top of AWS/Azure cloud)"],"employers":["Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Ubiq","Datalogic","Datalogic","MyInvenio","MyInvenio","MyInvenio","MyInvenio","MyInvenio","MyInvenio","MyInvenio","MyInvenio","Cedacri","Cedacri","Cedacri","Cedacri","Cedacri","Cedacri","Cedacri","Cedacri","Cedacri","Cedacri","Cedacri"],"keywords":["Software Development Leader","Back-End","Business Logic Manager","R&amp;D Big Data","R&amp;D Machine Learning","R&amp;D Computer Vision","R&amp;D Big Data","R&amp;D Big Data","Java","Front-End","JMS","Agile","TDD","WordPress","Hadoop","R&amp;D Computer Vision","Python","R&amp;D Process Mining","Data Cleansing","BPM Next 2019","Business Rules and DMN","CI/CD","Unit &amp; Functional Tests","Full-Stack Data Scientist","PhD Tutor","Area Manager","Big Data","Data Warehousing","Data&amp;Analytics","Big Data","Big Data on Cloud","Machine Learning","Container","Secure DevOps","Cloud","AWS/Azure"],"level":[2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,2,3,3,1,2,2,1,2,3,2,2,1,3],"x":{"__ndarray__":"96jJwWsLn8KsfoDDj83zP5Xe6UKp56dCBExRwg6cIcJ8tPJC5MjhwdqB+UJtIQo+KErfQnPH6cGNHvJBONjdQlWCrEINv59C2KoHw9juN0NBWhRDKI4cw7THHEMWwx1Ds1JVQmDQe8P93LbC6Z/NwhIj3sIY/Z3C4fMuQl/4BUNEBU7DOV43w3o810Ggip9C","dtype":"float32","shape":[36]},"x_backup":{"__ndarray__":"96jJwWsLn8KsfoDDj83zP5Xe6UKp56dCBExRwg6cIcJ8tPJC5MjhwdqB+UJtIQo+KErfQnPH6cGNHvJBONjdQlWCrEINv59C2KoHw9juN0NBWhRDKI4cw7THHEMWwx1Ds1JVQmDQe8P93LbC6Z/NwhIj3sIY/Z3C4fMuQl/4BUNEBU7DOV43w3o810Ggip9C","dtype":"float32","shape":[36]},"y":{"__ndarray__":"eCFjw8B60sE7sKZCK0y3QmwpjkLR+QPDSZADQ9teykIw24nDmgqFw2RbmMMp6ErDeixLw9tBk8NGin9DuL3fwkbRJ8PFklRCdjMZQ5a310KsBOpC4PSrwLxASMMcbXtBkp3Fwp5t4UJ81CBDlukpQiKud0FY1jhDVwFVQ27APEJpsIPCKpwYwiV1OUMwvEpD","dtype":"float32","shape":[36]},"y_backup":{"__ndarray__":"eCFjw8B60sE7sKZCK0y3QmwpjkLR+QPDSZADQ9teykIw24nDmgqFw2RbmMMp6ErDeixLw9tBk8NGin9DuL3fwkbRJ8PFklRCdjMZQ5a310KsBOpC4PSrwLxASMMcbXtBkp3Fwp5t4UJ81CBDlukpQiKud0FY1jhDVwFVQ27APEJpsIPCKpwYwiV1OUMwvEpD","dtype":"float32","shape":[36]}},"selected":{"id":"1949"},"selection_policy":{"id":"1950"}},"id":"1904","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1904"}},"id":"1932","type":"CDSView"},{"attributes":{"fill_color":{"field":"desc","transform":{"id":"1905"}},"line_alpha":{"value":0.3},"size":{"units":"screen","value":10},"x":{"field":"x"},"y":{"field":"y"}},"id":"1929","type":"Scatter"},{"attributes":{"callback":null,"point_policy":"follow_mouse","tooltips":[["Employer","&lt;b&gt;@employers{safe}&lt;/b&gt;"],["Keyword","&lt;b&gt;@keywords{safe}&lt;/b&gt;"],["Description","@descriptions{safe}"]]},"id":"1906","type":"HoverTool"},{"attributes":{},"id":"1947","type":"BasicTickFormatter"},{"attributes":{"source":{"id":"1904"},"text":{"field":"keywords"},"text_align":"center","text_font_size":{"value":"9pt"},"x":{"field":"x"},"y":{"field":"y"},"y_offset":{"value":-20}},"id":"1933","type":"LabelSet"},{"attributes":{"text":"Cluster of all Working Experiences"},"id":"1908","type":"Title"},{"attributes":{"end":3,"format":"0[.]00","js_property_callbacks":{"change:value":[{"id":"1937"}]},"start":1,"title":"Managerial Level","value":1},"id":"1936","type":"Slider"},{"attributes":{},"id":"1910","type":"DataRange1d"},{"attributes":{"args":{"level":{"id":"1936"},"option":{"id":"1935"},"p":{"id":"1907"},"source":{"id":"1904"}},"code":"\n    var radio_value = option.active;\n    const current_level = level.value;\n    \n    var x = source.data.x;\n    var y = source.data.y;\n    var x_orig = source.data.x_backup;\n    var y_orig = source.data.y_backup;\n    var employers = source.data.employers;\n    var levels = source.data.level;\n\n    for (var i = 0; i &lt; x.length; i++) {\n        if((levels[i] &gt;= current_level) &amp;&amp; (employers[i] == option.labels[radio_value] || option.labels[radio_value] == 'All')) {\n            x[i] = x_orig[i]\n            y[i] = y_orig[i]\n        } else {\n            x[i] = undefined\n            y[i] = undefined\n        }\n    }\n    \n    p.title.text = 'Cluster of Working Experiences in ' + option.labels[radio_value]\n    \n    source.change.emit();\n\n"},"id":"1937","type":"CustomJS"},{"attributes":{},"id":"1912","type":"DataRange1d"},{"attributes":{"active":[0],"js_property_callbacks":{"change:active":[{"id":"1939"}]},"labels":["Labels"]},"id":"1938","type":"CheckboxGroup"},{"attributes":{},"id":"1914","type":"LinearScale"}],"root_ids":["1943"]},"title":"Bokeh Application","version":"2.0.0"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            var fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  var docs_json = document.getElementById('2021').textContent;
+                  var render_items = [{"docid":"95812922-2a9f-4add-8796-21adec82cb6a","root_ids":["1943"],"roots":{"1943":"0c4e672e-65b4-4e2c-97b5-3a5a9b5bb393"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    var attempts = 0;
+                    var timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

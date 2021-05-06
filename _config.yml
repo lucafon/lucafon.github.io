@@ -9,7 +9,7 @@ name: Luca Fontanili
 title: Innovation Area Manager @ Cedacri
 email: luca.fontanili93@gmail.com
 #phone: Your phone number (optional)
-cv   : "resume.pdf"
+cv   : "fontanili.pdf"
 #website: Your website (eg. https://google.com)(optional)
 
 # Social links
@@ -29,14 +29,25 @@ pypi_username: lucafon
 # About Section
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/profile.jpeg
+about_location: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.91704532831!2d10.304617742239364!3d44.78515805064453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia%20Italo%20Pizzi%2C%207%2C%2043123%20Parma%20PR!5e0!3m2!1sen!2sit!4v1615846867024!5m2!1sen!2sit
+certifications: 
+- image: images/aws-csaa.png
+  url: https://www.credly.com/badges/61dfd9e1-489e-405a-ad04-ef48305cd618
+  title: AWS Certified Ssolution Architect Associate
+- image: images/tu:e.png
+  url: https://www.coursera.org/account/accomplishments/verify/R95WTVQ56CQS
+  title: Process Mining, Data science in Action
+- image: images/stanford.jpeg
+  url: https://www.coursera.org/account/accomplishments/verify/FGYRSK7XD8XG
+  title: Machine Learning
+- image: images/harvardx.png
+  url: https://courses.edx.org/certificates/f079493d7801420388179e219e2a9d63
+  title: Using Python for Research
 about_content: | # this will include new lines to allow paragraphs
   Currently Head of Innovation Area in Cedacri; former Data Scientist and Back-End developer. 
 
   Big Data lover, Artificial Intelligence and Machine Learning enthusiast, Computer Vision passionate, eager learner, teammate.
-  
-  [![AWS CSAA](images/aws-csaa.png "Title")](https://www.credly.com/badges/61dfd9e1-489e-405a-ad04-ef48305cd618)
-  
-  [Download my resume](https://lucafon.github.io/fontanili.pdf)
+ 
 
 # Experience Section
 # experience_title: Experience #(Use this to override about experience section title)
@@ -50,10 +61,33 @@ about_content: | # this will include new lines to allow paragraphs
 # More Section
 # more_title: A Little More About Me #(Use this to override about more section title)
 more_content: | # this will include new lines to allow paragraphs
+ 
+  ## PERSONAL SKILLS
+  <mark>Languages</mark>
+  *Levels: A1/2: Basic user - B1/2: Independent user - C1/2 Proficient user - MT Mother Tongue*
 
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.91704532831!2d10.304617742239364!3d44.78515805064453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia%20Italo%20Pizzi%2C%207%2C%2043123%20Parma%20PR!5e0!3m2!1sen!2sit!4v1615846867024!5m2!1sen!2sit" width="100%" height="350"></iframe>
+  <center>
+    <iframe src="html/languages.html" width="60%" style="border:none;" ></iframe>
+  </center>
 
-  <details><summary>CLICK ME</summary>
+  <mark>Communication Skills</mark>
+  I gained good communication skills speaking and interacting with customers and clents. I'm also part of the Data Science and Artificial Intelligence Group in Parma, and I give a speech about Machine Learning topics once every few months, usually in front of dozens of peoples.
+
+  <mark>Organisational/managerial Skills</mark>
+  Excellent social/organisational skills acquired during my experience as Team Leader/Area Manager.
+
+  <mark>Other Skills</mark>
+
+  **Sport**:
+
+  * American Football, 4 years’ experience in the Parma Panthers, interaction with American staff and players. Participation in European Championship with the Italian National American Football team
+
+  **Driving License**: B (own car)
+
+  ______________
+  ## JOB RELATED SKILLS
+
+  <details><summary>show the code</summary>
   <p>
 
   ```python
@@ -98,14 +132,285 @@ more_content: | # this will include new lines to allow paragraphs
   k = 7
   kmeans = KMeans(n_clusters=k, n_jobs=8)
   y_pred = kmeans.fit_predict(X_embedded)
+  
+  from bokeh.models import ColumnDataSource, HoverTool, LabelSet, RadioButtonGroup, CheckboxGroup, Slider
+  from bokeh.transform import linear_cmap
+  from bokeh.palettes import Blues9
+  from bokeh.io import output_file, save
+  from bokeh.plotting import figure
+  from bokeh.layouts import column 
+  from bokeh.models.callbacks import CustomJS
+  
+  output_file("html/skills_scatter_plot.html")
+  
+  y_labels = y_pred
+  
+  # data sources
+  source = ColumnDataSource(data=dict(x= X_embedded[:,0], y= X_embedded[:,1], x_backup = X_embedded[:,0],
+                                      y_backup = X_embedded[:,1], desc= y_labels, descriptions= working_experiences['description'],
+                                      employers = working_experiences['employer'], keywords = working_experiences['keyword'], 
+                                      level = working_experiences['managerial_level']
+                                      ))
+  
+  # map colors
+  mapper = linear_cmap(field_name='desc', palette=Blues9,low=min(y_labels), high=max(y_labels))
+  
+  # hover over information
+  hover = HoverTool(tooltips=[
+      ("Employer", "<b>@employers{safe}</b>"),
+      ("Keyword", "<b>@keywords{safe}</b>"),
+      ("Description", "@descriptions{safe}")
+      ],
+      point_policy="follow_mouse")
+  
+  p = figure(plot_width=650, plot_height=650, tools=[hover], title="Cluster of all Working Experiences", toolbar_location=None)
+  p.background_fill_color = "#323A48"
+  p.border_fill_color = "#323A48"
+  p.xaxis.major_label_text_color = None
+  p.yaxis.major_label_text_color = None
+  p.xgrid.grid_line_color = None
+  p.ygrid.grid_line_color = None
+  p.title.text_color = "white"
+  
+  # plot
+  p.scatter('x', 'y', size=10, source=source, fill_color=mapper, line_alpha=0.3, line_color="black")
+  
+  labels = LabelSet(x="x", y="y", text="keywords", y_offset=-20, text_font_size="9pt", text_color="#FFFFFF",
+                        source=source, text_align='center')
+  p.add_layout(labels)
+  
+  work_labels = ['All'] + list(working_experiences.employer.unique())
+  
+  option = RadioButtonGroup(labels=work_labels, active=0)
+  skill_type_slider = Slider(start=1, end=3, value=1, step=1, title="Managerial Level")
+  
+  callback = CustomJS(args=dict(p=p, source=source, level=skill_type_slider, option=option), code="""
+      var radio_value = option.active;
+      const current_level = level.value;
+      
+      var x = source.data.x;
+      var y = source.data.y;
+      var x_orig = source.data.x_backup;
+      var y_orig = source.data.y_backup;
+      var employers = source.data.employers;
+      var levels = source.data.level;
+  
+      for (var i = 0; i < x.length; i++) {
+          if((levels[i] >= current_level) && (employers[i] == option.labels[radio_value] || option.labels[radio_value] == 'All')) {
+              x[i] = x_orig[i]
+              y[i] = y_orig[i]
+          } else {
+              x[i] = undefined
+              y[i] = undefined
+          }
+      }
+      
+      p.title.text = 'Cluster of Working Experiences in ' + option.labels[radio_value]
+      
+      source.change.emit();
+  
+  """)
+  
+  option.js_on_click(callback)
+  skill_type_slider.js_on_change('value', callback)
+  
+  checkbox_group = CheckboxGroup(labels=['Labels'], active=[0])
+  checkbox_group.js_on_click(CustomJS(args=dict(labels=labels),code="""
+      if(this.active == '0') {
+          labels.visible = true
+          console.log('true')
+      } else {
+          labels.visible = false
+      }
+      labels.change.emit();
+  """))
+  
+  show(column(column(column(column(option),checkbox_group), skill_type_slider),p))
   ```
 
   </p>
   </details>
 
-  Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+  <center>
+    <iframe src="html/skills_scatter_plot.html" width="60%" height="800" style="border:none;" ></iframe>
+  </center> 
+
+  <details><summary>show the code</summary>
+  <p>
+
+  ```python
+
+  import os
+  from PIL import Image
   
+  import numpy as np
+  import matplotlib.pyplot as plt
+  from scipy.ndimage import gaussian_gradient_magnitude
   
+  from wordcloud import WordCloud, ImageColorGenerator, STOPWORDS
+  
+  # get data directory (using getcwd() is needed to support running example in generated IPython notebook)
+  d = os.getcwd()
+  
+  # load wikipedia text on rainbow
+  text = long_text
+  
+  # load image. This has been modified in gimp to be brighter and have more saturation.
+  background_color = np.array(Image.open(os.path.join(d, "images/background.jpeg")))
+  # subsample by factor of 3. Very lossy but for a wordcloud we don't really care.
+  background_color = background_color[::3, ::3]
+  
+  # create mask  white is "masked out"
+  background_mask = background_color.copy()
+  background_mask[background_mask.sum(axis=2) == 0] = 255
+  
+  # some finesse: we enforce boundaries between colors so they get less washed out.
+  # For that we do some edge detection in the image
+  edges = np.mean([gaussian_gradient_magnitude(background_color[:, :, i] / 255., 2) for i in range(3)], axis=0)
+  background_mask[edges > .08] = 255
+  
+  stopwords = set(STOPWORDS)
+  stopwords.add("different")
+  
+  # create wordcloud. A bit sluggish, you can subsample more strongly for quicker rendering
+  # relative_scaling=0 means the frequencies in the data are reflected less
+  # acurately but it makes a better picture
+  wc = WordCloud(max_words=2000, mask=background_mask, max_font_size=40, random_state=42, relative_scaling=0, stopwords=stopwords, background_color="rgba(255, 255, 255, 0)", mode="RGBA")
+  
+  # generate word cloud
+  wc.generate(text)
+  
+  # create coloring from image
+  image_colors = ImageColorGenerator(background_color)
+  wc.recolor(color_func=image_colors)
+  plt.figure(figsize=(15, 10))
+  plt.imshow(wc, interpolation="bilinear")
+  plt.axis("off")
+  wc.to_file("images/word_cloud.png")
+  plt.show()
+
+  ```
+
+  </p>
+  </details>
+
+  <center>
+    <img src="images/word_cloud.png"/>
+  </center>
+
+  <details><summary>show the code</summary>
+  <p>
+
+  ```python
+  def show_skills_plot(x_label, output_file_name, skills=None):
+    if skills is None:
+        raise Exception("you should have at least one skill, shouldn't you?")
+    from bokeh.io import show, output_notebook
+    from bokeh.plotting import figure
+    from bokeh.palettes import Blues9
+    from bokeh.transform import factor_cmap
+    from bokeh.models import ColumnDataSource
+    output_file(output_file_name)
+
+    
+    source = ColumnDataSource(skills)
+    
+    TOOLTIPS = """
+        <div style="width:300px">
+            <table>
+                <tr><td style="color:DodgerBlue;">Name</td><td style="text-align: center;"><b>@description</b></td></tr>
+                <tr><td style="color:DodgerBlue;">Type</td><td style="text-align: center;">@subtype</td></tr>
+                <tr><td style="color:DodgerBlue;">Details</td><td style="text-align: center;">@tooltip</td></tr>
+            </table>
+        </div>
+    """
+
+    p = figure(plot_width=700, plot_height=400, title="Expertise level",
+               x_range=list(skills.description), toolbar_location=None, tooltips=TOOLTIPS)
+        
+    index_cmap = factor_cmap('subtype', palette=Blues9, factors=sorted(skills.subtype.unique()), end=1) 
+    p.vbar(x='description', top='level', width=1, source=source,
+           line_color="white", fill_color=index_cmap)
+
+    p.y_range.start = 0
+    p.y_range.end = 10
+    p.x_range.range_padding = 0.1
+    p.xgrid.grid_line_color = None
+    p.xaxis.axis_label = x_label
+    p.xaxis.major_label_orientation = 1.2
+    #p.xaxis.major_label_text_color = 'white'
+    #p.yaxis.major_label_text_color = 'white'
+    #p.xaxis.axis_label_text_color = 'white'
+    p.outline_line_color = None
+    #p.background_fill_color = "#323A48"
+    #p.border_fill_color = "#323A48"
+    #p.title.text_color = "white"
+
+    show(p)
+
+  job_skills = pd.read_csv('legacy/job_skills.csv', sep=';')
+  job_skills['subtype'] = job_skills.apply(lambda x : x.type if pd.isna(x.subtype) else x.subtype, axis=1)
+  ```
+  </p>
+  </details> 
+ 
+  <center>
+    <iframe src="html/programming_laguages.html" width="70%" height="450" style="border:none;" ></iframe>
+  </center>
+
+  <center>
+    <iframe src="html/java_dev_ops.html" width="70%" height="450" style="border:none;" ></iframe>
+  </center>
+
+  <center>
+    <iframe src="html/containers.html" width="70%" height="450" style="border:none;" ></iframe>
+  </center>
+
+  <center>
+    <iframe src="html/big_data.html" width="70%" height="450" style="border:none;" ></iframe>
+  </center>
+
+  <center>
+    <iframe src="html/others.html" width="70%" height="450" style="border:none;" ></iframe>
+  </center>
+  
+  ______________
+  ## ADDITIONAL INFORMATION
+  **Publications**
+  
+  [Arm Gesture Recognition and Humanoid Imitation Using Functional Principal Component Analysis](https://ieeexplore.ieee.org/abstract/document/6696892),<br>
+  J. Aleotti, A. Cionini, L. Fontanili, S. Caselli,<br>
+  IEEE/RSJ International Conference on Intelligent Robotics and Systems (IROS),<br>
+  Tokyo, November 2013
+  
+  **Challenges**
+  
+  **[Generali Data Challenge](https://generali.datachallenge.it/competitions/40#final)**: top 10 finalist
+  
+  **Speaking**
+  
+  **[BPMNext 2019](https://youtu.be/cBeZX_S4vGo)**: Process Mining and DTO — How to Derive Business Rules and ROI from the Data
+  
+  **[Cloud, the “New Normal”](https://www.ikn.it/evento/11088/free-webinar-cloud-the-new-normal-per-banche-e-assicurazioni/speaker)**: Casi concreti di trasformazione e innovazione nel settore dei servizi finanziari
+  
+  **Honours and awards**
+  
+  Bronze medal of sporting merit given by CONI
+  
+  **Projects**
+
+  * **[myInvenio](https://www.my-invenio.com)**: A Process Mining tool to gather insightful from business processes
+  * Development of projects of personal interest using latest mobile and web programming languages (Android, HTML, CSS, SQL, JavaScript, Python) and tools (Nutch crawler, SonarQube, Tesseract).
+  * **[Ti Frutta](https://www.tifrutta.it)**: The very first "cash back" app in Italy that allows the customer to earn by shopping
+  * **[F Abbigliamento](https://www.fontaniliabbigliamento.it)**: development of the Fontanili Abbigliamento website using Wordpress CRM
+  * **CV – Eye Detector**: development of an eye detector in C++ based on Normalized Cross Correlation, robust to light variation
+  * **DSS – Hadoop**: implementation in Apache Hadoop environment of the Distributed Solving Set algorithm for outlier detection in large distributed data sets, using the MapReduce model
+  * **Parma Panthers Official**:  development of the Android official application of the Parma Panthers, the American Football team 4 times champion of Italy in the main championship
+  * **PicoPic**: VHDL project of a Peripheral Interface Controller for a stereo vision system on FPGA, with a 8 bit RISC microprocessor PicoBlaze
+  * **Wikiquote Search Engine**: implementation of a web crawler for Wikiquote based on Apache Nutch and development of a Java search engine based on Apache Solr
+  * **[pysqoop](https://pypi.org/project/pysqoop/)**: a Python package that lets you sqoop into HDFS data from RDBMS using Apache Sqoop (installable via pip)
+  * Member & Speaker of the Data Science & AI Group in Parma
+
 
 # Footer
 footer_show_references: true
