@@ -68,7 +68,7 @@ more_content: | # this will include new lines to allow paragraphs
   *Levels: A1/2: Basic user - B1/2: Independent user - C1/2 Proficient user - MT Mother Tongue*
 
   <center>
-    <iframe src="html/languages.html" width="60%" style="border:none;" ></iframe>
+    <iframe src="html/languages.html" width="80%" height="200" style="border:none;" ></iframe>
   </center>
 
   <mark>Communication Skills</mark>
