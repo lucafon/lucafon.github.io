@@ -34,7 +34,7 @@ about_location: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.9170
 certifications: 
 - image: images/aws-csaa.png
   url: https://www.credly.com/badges/61dfd9e1-489e-405a-ad04-ef48305cd618
-  title: AWS Certified Ssolution Architect Associate
+  title: AWS Certified Solution Architect Associate
 - image: images/ckad.png
   url: temp
   title: Certified Kubernetes Application Developer (CKAD)
