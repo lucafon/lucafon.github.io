@@ -35,6 +35,9 @@ certifications:
 - image: images/aws-csaa.png
   url: https://www.credly.com/badges/61dfd9e1-489e-405a-ad04-ef48305cd618
   title: AWS Certified Ssolution Architect Associate
+- image: images/ckad.png
+  url: temp
+  title: Certified Kubernetes Application Developer (CKAD)
 - image: images/tu:e.png
   url: https://www.coursera.org/account/accomplishments/verify/R95WTVQ56CQS
   title: Process Mining, Data science in Action
