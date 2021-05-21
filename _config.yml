@@ -16,6 +16,7 @@ cv   : "fontanili.pdf"
 # Social links
 #twitter_username: jekyllrb
 github_username:  lucafon
+credly_username: luca-fontanili
 #dribbble_username: jekyll
 #facebook_username: jekyll
 #flickr_username: jekyll
@@ -38,6 +39,9 @@ certifications:
 - image: images/ckad.png
   url: https://www.credly.com/badges/9b2704d5-60d5-4585-b9c7-a7b6651bbea8/public_url
   title: Certified Kubernetes Application Developer (CKAD)
+- image: images/cka.png
+  url: https://www.credly.com/badges/7a341d64-209b-467e-8396-040b399269c1/public_url
+  title: Certified Kubernetes Administrator (CKA)
 - image: images/tu:e.png
   url: https://www.coursera.org/account/accomplishments/verify/R95WTVQ56CQS
   title: Process Mining, Data science in Action

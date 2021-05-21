@@ -90,6 +90,13 @@
             </a>
           </li>
         {%- endif -%}
+        {%- if site.credly_username -%}
+          <li>
+            <a target="_blank" href="https://www.credly.com/users/{{ site.credly_username| cgi_escape | escape }}/badges" class="button button--sacnite button--round-l">
+              <i class="fas fa-id-badge" title="Credly"></i>
+            </a>
+          </li>
+        {%- endif -%}
         {%- if site.cv -%}
           <li>
             <a target="_blank" href={{ site.cv }} class="button button--sacnite button--round-l">
