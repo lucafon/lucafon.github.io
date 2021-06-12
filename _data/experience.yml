@@ -1,14 +1,24 @@
 # Experience template
 - layout: left
+  company: myInvenio, an IBM Company
+  link: https://www.my-invenio.com
+  job_title: Innovation/Integration Architect
+  dates: June 2021 - Present
+  logo: images/myInvenio-IBM.png
+  #quote: >
+  # Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    <mark>Business or sector</mark> Process Discovery & Mining
+- layout: left
   company: Cedacri
   link: https://www.cedacri.it
   job_title: Innovation Area Manager
-  dates: February 2020 - Present
+  dates: February 2020 - June 2021
   logo: images/cedacri.png
   #quote: >
   # Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
-    <mark>Business or sector</mark> Financial Services, Data Science, Machine Learning, R&D, Cloud
+    <mark>Business or sector</mark> Financial Services, Big Data, R&D, Cloud
 - layout: left
   company: myInvenio
   link: https://www.my-invenio.com
@@ -18,7 +28,7 @@
   #quote: >
   # Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
-    <mark>Business or sector</mark> Data Science, Machine Learning, Process Discovery & Mining
+    <mark>Business or sector</mark> Process Discovery & Mining
 - layout: left
   company: Ubiq S.R.L. - SIA Group
   link: https://www.sia.eu
@@ -28,7 +38,7 @@
   #quote: >
   # Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
-    <mark>Business or sector</mark> Computer Engineering, Big Data, Machine Learning
+    <mark>Business or sector</mark> Financial Services, Big Data
 - layout: left
   company: Datalogic ADC Inc
   link: https://www.datalogic.com/eng/index.html
