@@ -1,10 +1,10 @@
 # Experience template
 - layout: left
-  company: myInvenio, an IBM Company
-  link: https://www.my-invenio.com
-  job_title: Innovation/Integration Architect
+  company: IBM
+  link: https://www.ibm.com/it-it
+  job_title: Product Manager
   dates: June 2021 - Present
-  logo: images/myInvenio-IBM.png
+  logo: images/IBM.png
   #quote: >
   # Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
