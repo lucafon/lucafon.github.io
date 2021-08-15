@@ -2,9 +2,9 @@
 - layout: left
   company: IBM
   link: https://www.ibm.com/it-it
-  job_title: Product Manager
+  job_title: Technical Product Manager
   dates: June 2021 - Present
-  logo: images/ibm.png
+  logo: images/ibm.jpeg
   #quote: >
   # Short description of the company (optional)
   description: | # this will include new lines to allow paragraphs
