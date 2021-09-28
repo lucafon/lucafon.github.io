@@ -7,7 +7,7 @@ google_analytics: G-SSF4PV3KNH
 
 # Personal info
 name: Luca Fontanili
-title: Technical Product Manager @ IBM
+title: Technical Product Manager for IBM Process Mining @ IBM
 email: luca.fontanili93@gmail.com
 #phone: Your phone number (optional)
 cv   : "fontanili.pdf"
@@ -33,6 +33,9 @@ pypi_username: lucafon
 about_profile_image: images/profile.jpeg
 about_location: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.91704532831!2d10.304617742239364!3d44.78515805064453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia%20Italo%20Pizzi%2C%207%2C%2043123%20Parma%20PR!5e0!3m2!1sen!2sit!4v1615846867024!5m2!1sen!2sit
 certifications: 
+- image: images/idtp.png
+  url: 
+  title: IBM Enterprise Design Thinking - Practitioner
 - image: images/aws-csaa.png
   url: https://www.credly.com/badges/61dfd9e1-489e-405a-ad04-ef48305cd618
   title: AWS Certified Solution Architect Associate
@@ -52,7 +55,7 @@ certifications:
   url: https://courses.edx.org/certificates/f079493d7801420388179e219e2a9d63
   title: Using Python for Research
 about_content: | # this will include new lines to allow paragraphs
-  Currently Technical Product Manager at IBM; former Head of Innovation, Data Scientist and Back-End developer. 
+  Currently Technical Product Manager for IBM Process Mining at IBM; former Head of Innovation, Data Scientist and Back-End developer. 
 
   Big Data lover, eager learner, teammate.
  
@@ -114,7 +117,7 @@ more_content: | # this will include new lines to allow paragraphs
   from sklearn.manifold import TSNE
   from sklearn.cluster import KMeans
   
-  working_experiences = pd.read_sql_query('SELECT * FROM work_experiences where employer in ("Ubiq", "MyInvenio", "Cedacri", "Datalogic")', conn)
+  working_experiences = pd.read_sql_query('SELECT * FROM work_experiences where employer in ("Datalogic", "Ubiq", "MyInvenio", "Cedacri", "IBM")', conn)
   descriptions = working_experiences.drop(['employer', 'keyword'], axis=1)
   keywords = working_experiences.drop(['employer', 'description'], axis=1)
   employers = working_experiences.drop(['description', 'keyword'], axis=1)
@@ -144,7 +147,7 @@ more_content: | # this will include new lines to allow paragraphs
   from bokeh.models import ColumnDataSource, HoverTool, LabelSet, RadioButtonGroup, CheckboxGroup, Slider
   from bokeh.transform import linear_cmap
   from bokeh.palettes import Blues9
-  from bokeh.io import output_file, save
+  from bokeh.io import output_file, save, show
   from bokeh.plotting import figure
   from bokeh.layouts import column 
   from bokeh.models.callbacks import CustomJS
@@ -278,6 +281,7 @@ more_content: | # this will include new lines to allow paragraphs
   
   stopwords = set(STOPWORDS)
   stopwords.add("different")
+  stopwords.add("development")
   
   # create wordcloud. A bit sluggish, you can subsample more strongly for quicker rendering
   # relative_scaling=0 means the frequencies in the data are reflected less
