@@ -410,16 +410,10 @@ more_content: | # this will include new lines to allow paragraphs
   
   **Projects**
 
-  * **[myInvenio](https://www.my-invenio.com)**: A Process Mining tool to gather insightful from business processes
   * Development of projects of personal interest using latest mobile and web programming languages (Android, HTML, CSS, SQL, JavaScript, Python) and tools (Nutch crawler, SonarQube, Tesseract).
-  * **[Ti Frutta](https://www.tifrutta.it)**: The very first "cash back" app in Italy that allows the customer to earn by shopping
-  * **[F Abbigliamento](https://www.fontaniliabbigliamento.it)**: development of the Fontanili Abbigliamento website using Wordpress CRM
-  * **CV – Eye Detector**: development of an eye detector in C++ based on Normalized Cross Correlation, robust to light variation
-  * **DSS – Hadoop**: implementation in Apache Hadoop environment of the Distributed Solving Set algorithm for outlier detection in large distributed data sets, using the MapReduce model
-  * **Parma Panthers Official**:  development of the Android official application of the Parma Panthers, the American Football team 4 times champion of Italy in the main championship
-  * **PicoPic**: VHDL project of a Peripheral Interface Controller for a stereo vision system on FPGA, with a 8 bit RISC microprocessor PicoBlaze
-  * **Wikiquote Search Engine**: implementation of a web crawler for Wikiquote based on Apache Nutch and development of a Java search engine based on Apache Solr
-  * **[pysqoop](https://pypi.org/project/pysqoop/)**: a Python package that lets you sqoop into HDFS data from RDBMS using Apache Sqoop (installable via pip)
+  * **Parma Panthers Official**:  development of the Android official application of the Parma Panthers, the American Football team 4 times champion of Italy in the main championship,
+  * **[pysqoop](https://pypi.org/project/pysqoop/)**: a Python package that lets you sqoop into HDFS data from RDBMS using Apache Sqoop (installable via pip).
+  * **Coinbase trading bot**: a serverless Python bot running on AWS Lambda that trades crypto on Coinbase and that can be interacted with via Telegram Bot.
   * Member & Speaker of the Data Science & AI Group in Parma
 
 
