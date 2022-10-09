@@ -4,4 +4,5 @@ _site
 .jekyll-metadata
 vendor
 .ipynb_checkpoints
-
+.idea/**
+.idea

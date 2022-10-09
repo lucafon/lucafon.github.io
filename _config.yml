@@ -3,6 +3,8 @@ repository: Git repository where your resume will be hosted, only required if yo
 favicon: images/phyrexia.png
 
 markdown: CommonMarkGhPages
+commonmark:
+  options: ["UNSAFE"]
 google_analytics: G-SSF4PV3KNH
 
 # Personal info
