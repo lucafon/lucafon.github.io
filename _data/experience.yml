@@ -1,5 +1,15 @@
 # Experience template
 - layout: left
+  company: JEM Tech
+  link: http://www.jemtech.it/
+  job_title: Technical Consultant
+  dates: December 2021 - Present
+  logo: images/jemtech.png
+  #quote: >
+  # Short description of the company (optional)
+  description: | # this will include new lines to allow paragraphs
+    <mark>Business or sector</mark> Computer Vision, Health
+- layout: left
   company: IBM
   link: https://www.ibm.com/it-it
   job_title: Technical Product Manager
