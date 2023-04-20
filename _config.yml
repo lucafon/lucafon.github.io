@@ -36,7 +36,7 @@ about_profile_image: images/profile.jpeg
 about_location: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24199.91704532831!2d10.304617742239364!3d44.78515805064453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47806b21bd497023%3A0x45bd84a17c42da79!2sVia%20Italo%20Pizzi%2C%207%2C%2043123%20Parma%20PR!5e0!3m2!1sen!2sit!4v1615846867024!5m2!1sen!2sit
 certifications: 
 - image: images/idtp.png
-  url: 
+  url: https://www.credly.com/badges/58ebb953-eb44-4d98-a370-597aa8917084/public_url 
   title: IBM Enterprise Design Thinking - Practitioner
 - image: images/aws-csaa.png
   url: https://www.credly.com/badges/61dfd9e1-489e-405a-ad04-ef48305cd618
@@ -56,6 +56,12 @@ certifications:
 - image: images/harvardx.png
   url: https://courses.edx.org/certificates/f079493d7801420388179e219e2a9d63
   title: Using Python for Research
+- image: images/ibmko.png
+  url: https://www.credly.com/badges/0ca1b69e-cd7a-405c-8190-69b312e71992/public_url
+  title: Intermediate Kubernetes Operators
+- image: images/paf.png
+  url: https://www.credly.com/badges/f67848b2-0dbd-4fa1-bf8c-0bc4d625b5b9/public_url
+  title: Product Academy Fundamentals
 about_content: | # this will include new lines to allow paragraphs
   Currently Technical Product Manager for IBM Process Mining at IBM; former Head of Innovation, Data Scientist and Back-End developer. 
 
